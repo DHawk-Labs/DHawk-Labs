@@ -2,7 +2,7 @@
   <h3 align="center">◇    D ' H A W K - L A B S   ◇  </h3>       
 
 
-<h3 align="center">Geometric Programming Languages and Knowledge Representation</h3>
+<h3 align="center">Code Synthesis and Knowledge Representation</h3>
 
 <p align="center">
   <strong>WPE/TME</strong> for structural reasoning · <strong>Crystalline</strong> for code synthesis
