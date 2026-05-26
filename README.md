@@ -5,7 +5,6 @@
 <h3 align="center">Geometric Programming Languages and Knowledge Representation</h3>
 
 <p align="center">
-  Two novel languages built on field theory and geometric calculus<br/>
   <strong>WPE/TME</strong> for structural reasoning · <strong>Crystalline</strong> for code synthesis
 </p>
 
