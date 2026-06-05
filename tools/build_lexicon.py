@@ -92,6 +92,40 @@ _TOKEN_RE = re.compile(r"^[a-z]+(?:[-'][a-z]+)*$")
 _SINGLE_LETTER_OK = {"a", "i", "o"}  # the only standalone single letters allowed
 
 
+_ROMAN_RE = re.compile(
+    r"^m{0,4}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$")
+
+
+def is_roman_numeral(word: str) -> bool:
+    """True iff *word* is a well-formed Roman numeral (e.g. 'ix', 'lxxxv')."""
+    return len(word) >= 1 and bool(_ROMAN_RE.match(word))
+
+
+# Tokens that look like Roman numerals but are genuine English words or
+# standard abbreviations (intravenous, compact disc, centimetre, the vi editor,
+# the Greek letter xi, ...). These are kept; every other valid Roman numeral is
+# rejected as noise. A frequency cutoff cannot be used because pure numerals
+# like 'ii'/'iii' are *more* frequent in corpora than real abbreviations.
+_ROMAN_KEEP = {
+    "mix", "cd", "cv", "iv", "cm", "mm", "cc", "ml", "dc", "dl", "md", "mi",
+    "vi", "xi",
+}
+
+
+def is_noise(word: str) -> bool:
+    """Reject obvious garbage that WordNet carries as lemmas.
+
+    The clear-cut case is Roman numerals (WordNet stores i..M as numerals /
+    adjectives). The strict Roman grammar in ``is_roman_numeral`` does not match
+    ordinary words such as 'did', 'mild', 'dim' or 'lid', so rejecting every
+    matched token except an explicit keep-list removes 'ii', 'iii', 'viii',
+    'xiv', 'lxxxv', ... while preserving real words/abbreviations.
+    """
+    if is_roman_numeral(word) and word not in _ROMAN_KEEP:
+        return True
+    return False
+
+
 def clean_single(word: str) -> bool:
     """True iff *word* is an acceptable single-token canonical form."""
     if len(word) == 1:
@@ -99,6 +133,8 @@ def clean_single(word: str) -> bool:
     if not _SINGLE_RE.match(word):
         return False
     if "--" in word or "''" in word:
+        return False
+    if is_noise(word):
         return False
     return True
 
@@ -297,7 +333,8 @@ def link_pointers(all_entries, word_pos_to_addr, word_to_addrs):
         ptr, orth = [], []
         opp = ""
 
-        # --- ptr: synonyms (same synset) then hypernyms ---------------------
+        # --- ptr: synonyms (same synset), then adjective satellites, then
+        #         hypernyms — all curated by WordNet, so high precision -------
         for lem in syn.lemmas():
             lw = lem.name().lower()
             if lw == word:
@@ -308,6 +345,19 @@ def link_pointers(all_entries, word_pos_to_addr, word_to_addrs):
                 ptr.append(a)
             if len(ptr) >= 8:
                 break
+        # adjectives have no hypernyms; their close synonyms live in the
+        # similar_to cluster (beautiful -> pretty/lovely/gorgeous, ...)
+        if syn.pos() in ("a", "s") and len(ptr) < 8:
+            for sim in syn.similar_tos():
+                for lem in sim.lemmas():
+                    a = _resolve(lem.name().lower(), "a", self_addr,
+                                 word_pos_to_addr, word_to_addrs)
+                    if a and a not in ptr:
+                        ptr.append(a)
+                    if len(ptr) >= 8:
+                        break
+                if len(ptr) >= 8:
+                    break
         if len(ptr) < 3:
             for hyper in syn.hypernyms():
                 for lem in hyper.lemmas():
@@ -487,28 +537,74 @@ def build(args):
 
     all_entries = [e for v in entries_by_domain.values() for e in v]
 
-    print("[3/6] LINK    resolving pointers ...", flush=True)
+    print("[3/7] LINK    resolving pointers ...", flush=True)
     by_addr, word_pos_to_addr, word_to_addrs = build_indexes(all_entries)
     link_pointers(all_entries, word_pos_to_addr, word_to_addrs)
 
     enriched = set()
+
+    # ---- Stage 4: OFFLINE enrichment (no budget, no network) -------------
+    # This is the primary completeness pass: Moby for synonyms/related and
+    # WordNet's full antonym closure. It runs by default; --no-offline skips.
+    if not args.no_offline:
+        print("[4/7] OFFLINE Moby + WordNet antonym closure ...", flush=True)
+        import offline_enrich
+
+        def resolve_same_pos(word_lc, pg, self_addr):
+            a = word_pos_to_addr.get((word_lc, pg))
+            return a if (a and a != self_addr) else None
+
+        def resolve(word_lc, pg, self_addr):
+            a = word_pos_to_addr.get((word_lc, pg))
+            if a and a != self_addr:
+                return a
+            for cand in word_to_addrs.get(word_lc, ()):
+                if cand != self_addr:
+                    return cand
+            return None
+
+        moby = offline_enrich.load_moby(args.moby)
+        print(f"        moby roots: {len(moby)} words", flush=True)
+        m_changed = offline_enrich.apply_moby(
+            all_entries, moby, resolve_same_pos, resolve)
+        print(f"        moby filled ptr/orth on {len(m_changed)} entries",
+              flush=True)
+
+        entry_pos_set = {(e["word"], e["_pos_group"]) for e in all_entries}
+        ant_map = offline_enrich.build_antonym_map(entry_pos_set)
+        print(f"        antonym map: {len(ant_map)} curated pairs", flush=True)
+        a_changed = offline_enrich.apply_antonyms(all_entries, ant_map, resolve)
+        print(f"        antonyms filled on {len(a_changed)} entries", flush=True)
+        enriched |= m_changed | a_changed
+    else:
+        print("[4/7] OFFLINE skipped (--no-offline)", flush=True)
+
+    # ---- Stage 5: optional Datamuse polish (online, cached) --------------
     if args.enrich:
-        print("[4/6] ENRICH  Datamuse pass ...", flush=True)
+        print("[5/7] DATAMUSE polish pass ...", flush=True)
         import datamuse_enrich
-        enriched = datamuse_enrich.run(
+        d_enriched = datamuse_enrich.run(
             all_entries, word_pos_to_addr, word_to_addrs,
             budget=args.enrich_budget, workers=args.enrich_workers,
             cache_path=args.cache,
         )
-        print(f"        entries enriched: {len(enriched)}", flush=True)
+        enriched |= d_enriched
+        print(f"        datamuse enriched: {len(d_enriched)} entries", flush=True)
     else:
-        print("[4/6] ENRICH  skipped (--enrich not set)", flush=True)
+        print("[5/7] DATAMUSE skipped (--enrich not set)", flush=True)
 
-    print("[5/6] CURATE  computing curation fields ...", flush=True)
+    print("[6/7] CURATE  computing curation fields ...", flush=True)
     for e in all_entries:
         curate(e, enriched)
 
-    print("[6/6] EMIT    writing JSON ...", flush=True)
+    # completeness self-check
+    try:
+        import offline_enrich as _oe
+        print(_oe.coverage_report(all_entries), flush=True)
+    except Exception as _e:
+        print(f"        (coverage report skipped: {_e})", flush=True)
+
+    print("[7/7] EMIT    writing JSON ...", flush=True)
     doc = assemble_document(all_entries, args)
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as fh:
@@ -524,14 +620,24 @@ def build(args):
 CLOSED_DOMS = ("PRON", "DET", "NUM", "PREP", "CONJ", "AUX", "INTERJ")
 
 
+def _real_freq(word):
+    """Real corpus frequency (Zipf 0..8) for a word, robust to multiword."""
+    try:
+        from wordfreq import zipf_frequency
+    except Exception:
+        return 0.0
+    return zipf_frequency(word.replace("_", " "), "en")
+
+
 def _trim_to(entries_by_domain, target):
-    """Trim to ``target`` entries, preferring common words.
+    """Trim to ``target`` entries, preferring genuinely common words.
 
     Every closed-class (function-word) entry is always kept — those classes are
-    small and essential. The remaining budget is filled from the open-class
-    pool ranked by WordNet frequency (SemCor count), then sense richness, then
-    alphabetically, so the dictionary keeps the most useful words and sheds the
-    obscure long tail rather than an arbitrary slice.
+    small and essential. The remaining budget is filled from the open-class pool
+    ranked by a *real* corpus frequency (wordfreq Zipf), then WordNet sense
+    richness, then SemCor count, then shorter words, then alphabetically. This
+    keeps the words people actually use and sheds the obscure long tail instead
+    of an arbitrary alphabetical slice.
     """
     kept = defaultdict(list)
     open_pool = []
@@ -540,8 +646,11 @@ def _trim_to(entries_by_domain, target):
             kept[dom] = list(entries)
         else:
             open_pool.extend(entries)
+    for e in open_pool:
+        e["_zipf"] = _real_freq(e["word"])
     budget = target - sum(len(v) for v in kept.values())
-    open_pool.sort(key=lambda e: (-e["_freq"], -e["_nsense"], e["word"]))
+    open_pool.sort(key=lambda e: (-e["_zipf"], -e["_nsense"], -e["_freq"],
+                                  len(e["word"]), e["word"]))
     for e in open_pool[:max(0, budget)]:
         kept[e["dom"]].append(e)
     return kept
@@ -595,8 +704,12 @@ def parse_args(argv=None):
                    help="max tokens in a multiword lemma")
     p.add_argument("--no-multiword", action="store_true",
                    help="exclude underscore_separated multiword lemmas")
+    p.add_argument("--moby", default="data/mthesaur.txt",
+                   help="path to Moby Thesaurus (mthesaur.txt)")
+    p.add_argument("--no-offline", action="store_true",
+                   help="skip the offline Moby + antonym enrichment pass")
     p.add_argument("--enrich", action="store_true",
-                   help="run the cached Datamuse enrichment pass")
+                   help="ALSO run the optional cached Datamuse polish pass")
     p.add_argument("--enrich-budget", type=int, default=25000,
                    help="max Datamuse word lookups this run")
     p.add_argument("--enrich-workers", type=int, default=16)

@@ -1,0 +1,891 @@
+{
+  "_note": "Human-readable preview: pointers resolved to words. Canonical schema-shaped entries live in word_dict_75k_lib.json",
+  "entries": {
+    "NOUNA.love": {
+      "word": "love",
+      "addr": "9@282.5631",
+      "dom": "NOUNA",
+      "shell": 9,
+      "theta": 282.5631,
+      "kappa": 9.495471,
+      "synonyms_ptr": [
+        "NOUNA.emotion",
+        "NOUNP.amor",
+        "NOUNP.aphrodite",
+        "NOUNP.astarte",
+        "NOUNP.cupid",
+        "NOUNA.eros",
+        "NOUNP.freya",
+        "NOUNP.kama"
+      ],
+      "orthogonal": [
+        "VERBS.love",
+        "NOUNA.hate",
+        "NOUNA.joy",
+        "NOUNA.fear",
+        "NOUNA.anxiety"
+      ],
+      "opposite": "NOUNA.hate",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "VERBS.love": {
+      "word": "love",
+      "addr": "12@60.3495",
+      "dom": "VERBS",
+      "shell": 12,
+      "theta": 60.3495,
+      "kappa": 12.495471,
+      "synonyms_ptr": [
+        "VERBS.accord",
+        "VERBS.admire",
+        "VERBS.adore",
+        "VERBS.appreciate",
+        "VERBA.baby",
+        "VERBA.bang"
+      ],
+      "orthogonal": [
+        "ADJ.loveable",
+        "ADJ.lovable",
+        "NOUNA.love",
+        "NOUNC.lover",
+        "NOUNP.amor"
+      ],
+      "opposite": "VERBS.hate",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "VERBA.run": {
+      "word": "run",
+      "addr": "11@34.5579",
+      "dom": "VERBA",
+      "shell": 11,
+      "theta": 34.5579,
+      "kappa": 11.386505,
+      "synonyms_ptr": [
+        "VERBA.travel_rapidly",
+        "VERBA.speed",
+        "VERBA.hurry",
+        "VERBA.zip",
+        "VERBS.abide",
+        "VERBA.abrade",
+        "VERBA.abscond",
+        "VERBA.acquire"
+      ],
+      "orthogonal": [
+        "NOUNA.run",
+        "NOUNC.runner",
+        "NOUNA.running",
+        "VERBA.flit",
+        "VERBA.zoom"
+      ],
+      "opposite": "VERBA.idle",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "ADJ.happy": {
+      "word": "happy",
+      "addr": "13@223.898",
+      "dom": "ADJ",
+      "shell": 13,
+      "theta": 223.898,
+      "kappa": 13.347205,
+      "synonyms_ptr": [
+        "ADJ.blissful",
+        "ADJ.golden",
+        "ADJ.halcyon",
+        "ADJ.prosperous",
+        "ADJ.bright",
+        "ADJ.blessed",
+        "ADJ.laughing",
+        "ADJ.riant"
+      ],
+      "orthogonal": [
+        "NOUNA.happiness",
+        "ADJ.euphoric",
+        "ADJ.cheerful",
+        "ADJ.felicitous",
+        "ADJ.contented"
+      ],
+      "opposite": "ADJ.unhappy",
+      "curation": {
+        "auto_sources": [
+          "wordnet"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "ADJ.cold": {
+      "word": "cold",
+      "addr": "13@280.9319",
+      "dom": "ADJ",
+      "shell": 13,
+      "theta": 280.9319,
+      "kappa": 13.367,
+      "synonyms_ptr": [
+        "ADJ.ice-cold",
+        "ADJ.shivery",
+        "ADJ.unheated",
+        "ADJ.chilly",
+        "ADJ.parky",
+        "ADJ.arctic",
+        "ADJ.frigid",
+        "ADJ.gelid"
+      ],
+      "orthogonal": [
+        "NOUNA.cold",
+        "NOUNA.coldness",
+        "ADJ.cool",
+        "ADJ.frozen",
+        "NOUNP.asiatic_flu"
+      ],
+      "opposite": "ADJ.hot",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "ADJ.beautiful": {
+      "word": "beautiful",
+      "addr": "13@203.0203",
+      "dom": "ADJ",
+      "shell": 13,
+      "theta": 203.0203,
+      "kappa": 13.306076,
+      "synonyms_ptr": [
+        "ADJ.stunning",
+        "ADJ.bonny",
+        "ADJ.bonnie",
+        "ADJ.comely",
+        "ADJ.fair",
+        "ADJ.sightly",
+        "ADJ.beauteous",
+        "ADJ.scenic"
+      ],
+      "orthogonal": [
+        "ADJ.graceful",
+        "ADJ.pleasing",
+        "ADJ.attractive",
+        "ADJ.admirable",
+        "ADJ.aesthetic"
+      ],
+      "opposite": "ADJ.ugly",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNM.water": {
+      "word": "water",
+      "addr": "8@202.5547",
+      "dom": "NOUNM",
+      "shell": 8,
+      "theta": 202.5547,
+      "kappa": 8.447086,
+      "synonyms_ptr": [
+        "NOUNM.binary_compound",
+        "NOUNM.liquid",
+        "NOUNP.davy",
+        "NOUNP.davy_jones",
+        "NOUNP.dylan",
+        "NOUNP.neptune",
+        "NOUNP.nereid",
+        "NOUNP.nereus"
+      ],
+      "orthogonal": [
+        "ADJ.watery",
+        "VERBA.water",
+        "NOUNC.tear",
+        "NOUNC.teardrop",
+        "NOUNA.ice_crystal"
+      ],
+      "opposite": "NOUNA.gas",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNC.dog": {
+      "word": "dog",
+      "addr": "7@39.5194",
+      "dom": "NOUNC",
+      "shell": 7,
+      "theta": 39.5194,
+      "kappa": 7.375595,
+      "synonyms_ptr": [
+        "NOUNC.domestic_dog",
+        "NOUNP.canis_familiaris",
+        "NOUNC.canine",
+        "NOUNC.canid",
+        "NOUNC.domestic_animal",
+        "NOUNC.domesticated_animal",
+        "NOUNP.afghan_hound",
+        "NOUNP.alaskan_malamute"
+      ],
+      "orthogonal": [
+        "NOUNC.pack",
+        "NOUNP.canis",
+        "NOUNC.genus_canis",
+        "NOUNC.wolf",
+        "NOUNC.fox"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      }
+    },
+    "NOUNC.computer": {
+      "word": "computer",
+      "addr": "7@256.5223",
+      "dom": "NOUNC",
+      "shell": 7,
+      "theta": 256.5223,
+      "kappa": 7.278329,
+      "synonyms_ptr": [
+        "NOUNC.computing_machine",
+        "NOUNC.computing_device",
+        "NOUNC.data_processor",
+        "NOUNC.electronic_computer",
+        "NOUNC.information_processing_system",
+        "NOUNP.ida",
+        "NOUNC.accountant",
+        "NOUNC.actuary"
+      ],
+      "orthogonal": [
+        "VERBS.compute",
+        "VERBA.computerize",
+        "NOUNC.platform",
+        "NOUNC.milking_machine",
+        "NOUNC.machine_tool"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      }
+    },
+    "ADV.quickly": {
+      "word": "quickly",
+      "addr": "14@253.2067",
+      "dom": "ADV",
+      "shell": 14,
+      "theta": 253.2067,
+      "kappa": 14.306816,
+      "synonyms_ptr": [
+        "ADV.rapidly",
+        "ADV.speedily",
+        "ADV.chop-chop",
+        "ADV.apace",
+        "ADV.amain",
+        "ADV.animatedly",
+        "ADV.anxiously",
+        "ADV.at_once"
+      ],
+      "orthogonal": [
+        "ADV.avidly",
+        "ADV.breathlessly",
+        "ADV.briefly",
+        "ADV.cursorily",
+        "ADV.decisively"
+      ],
+      "opposite": "ADV.slowly",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "ADV.always": {
+      "word": "always",
+      "addr": "14@211.2112",
+      "dom": "ADV",
+      "shell": 14,
+      "theta": 211.2112,
+      "kappa": 14.386129,
+      "synonyms_ptr": [
+        "ADV.ever",
+        "ADV.e'er",
+        "ADV.again_and_again",
+        "ADV.all_along",
+        "ADV.all_over",
+        "ADV.all_the_time",
+        "ADV.ceaselessly",
+        "ADV.constantly"
+      ],
+      "orthogonal": [
+        "ADV.continually",
+        "ADV.continuously",
+        "ADV.daily",
+        "ADV.day_after_day",
+        "ADV.enduringly"
+      ],
+      "opposite": "ADV.never",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "VERBA.buy": {
+      "word": "buy",
+      "addr": "11@344.837",
+      "dom": "VERBA",
+      "shell": 11,
+      "theta": 344.837,
+      "kappa": 11.384603,
+      "synonyms_ptr": [
+        "VERBA.purchase",
+        "VERBA.get",
+        "VERBA.acquire",
+        "VERBA.abide_by",
+        "VERBA.accede",
+        "VERBS.accept",
+        "VERBA.acclaim",
+        "VERBA.acquiesce"
+      ],
+      "orthogonal": [
+        "NOUNC.buy",
+        "NOUNC.buyer",
+        "NOUNA.buying",
+        "NOUNA.purchase",
+        "NOUNC.purchaser"
+      ],
+      "opposite": "VERBA.sell",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "VERBA.rise": {
+      "word": "rise",
+      "addr": "11@343.8436",
+      "dom": "VERBA",
+      "shell": 11,
+      "theta": 343.8436,
+      "kappa": 11.495012,
+      "synonyms_ptr": [
+        "VERBA.lift",
+        "VERBS.arise",
+        "VERBA.move_up",
+        "VERBA.go_up",
+        "VERBA.come_up",
+        "VERBA.uprise",
+        "VERBA.access",
+        "VERBA.accession"
+      ],
+      "orthogonal": [
+        "NOUNA.rise",
+        "NOUNA.rising",
+        "NOUNA.lift",
+        "VERBA.drive",
+        "VERBA.wend"
+      ],
+      "opposite": "VERBA.fall",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNA.success": {
+      "word": "success",
+      "addr": "9@315.3743",
+      "dom": "NOUNA",
+      "shell": 9,
+      "theta": 315.3743,
+      "kappa": 9.312101,
+      "synonyms_ptr": [
+        "NOUNA.happening",
+        "NOUNA.occurrence",
+        "NOUNA.occurrent",
+        "NOUNA.natural_event",
+        "NOUNC.easy_street",
+        "NOUNP.grand_guignol",
+        "NOUNP.ko",
+        "NOUNP.passion_play"
+      ],
+      "orthogonal": [
+        "NOUNC.union",
+        "NOUNA.experience",
+        "NOUNA.finish",
+        "NOUNA.disappearance",
+        "NOUNA.appearance"
+      ],
+      "opposite": "NOUNA.failure",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNA.freedom": {
+      "word": "freedom",
+      "addr": "9@113.7506",
+      "dom": "NOUNA",
+      "shell": 9,
+      "theta": 113.7506,
+      "kappa": 9.396409,
+      "synonyms_ptr": [
+        "NOUNC.state",
+        "NOUNA.arrogance",
+        "NOUNA.artlessness",
+        "NOUNA.audacity",
+        "NOUNA.authority",
+        "NOUNA.authorization",
+        "NOUNA.autonomy",
+        "NOUNA.blank_check"
+      ],
+      "orthogonal": [
+        "NOUNA.being",
+        "NOUNC.end",
+        "NOUNA.flux",
+        "NOUNA.imperfection",
+        "NOUNA.tribalism"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      }
+    },
+    "PRON.i": {
+      "word": "i",
+      "addr": "1@230.1553",
+      "dom": "PRON",
+      "shell": 1,
+      "theta": 230.1553,
+      "kappa": 1.581214,
+      "synonyms_ptr": [
+        "PRON.he",
+        "PRON.her",
+        "PRON.herself",
+        "PRON.him",
+        "PRON.himself",
+        "PRON.it",
+        "PRON.me",
+        "PRON.myself"
+      ],
+      "orthogonal": [
+        "NOUNA.ace",
+        "VERBA.alter",
+        "NOUNC.alter_ego",
+        "NOUNA.anima",
+        "NOUNM.atom"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "closed_class",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "DET.the": {
+      "word": "the",
+      "addr": "2@27.7252",
+      "dom": "DET",
+      "shell": 2,
+      "theta": 27.7252,
+      "kappa": 2.378572,
+      "synonyms_ptr": [],
+      "orthogonal": [],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "closed_class"
+        ],
+        "definition_strength": "weak",
+        "needs_curation": true,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "empty",
+        "sufficiency_score": 0.2
+      }
+    },
+    "PREP.under": {
+      "word": "under",
+      "addr": "4@75.5124",
+      "dom": "PREP",
+      "shell": 4,
+      "theta": 75.5124,
+      "kappa": 4.447655,
+      "synonyms_ptr": [
+        "PREP.below",
+        "PREP.beneath",
+        "PREP.down",
+        "PREP.underneath"
+      ],
+      "orthogonal": [
+        "ADJ.collateral",
+        "ADJ.dependent",
+        "ADJ.downstairs",
+        "ADJ.drunk",
+        "ADJ.earlier"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "closed_class",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      }
+    },
+    "CONJ.because": {
+      "word": "because",
+      "addr": "5@105.0466",
+      "dom": "CONJ",
+      "shell": 5,
+      "theta": 105.0466,
+      "kappa": 5.473143,
+      "synonyms_ptr": [
+        "CONJ.as",
+        "CONJ.considering",
+        "CONJ.for",
+        "CONJ.since",
+        "CONJ.whereas"
+      ],
+      "orthogonal": [
+        "AUX.being",
+        "NOUNA.cause",
+        "ADV.in_that",
+        "NOUNA.now",
+        "NOUNA.seeing"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "closed_class",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "AUX.would": {
+      "word": "would",
+      "addr": "6@80.2484",
+      "dom": "AUX",
+      "shell": 6,
+      "theta": 80.2484,
+      "kappa": 6.446048,
+      "synonyms_ptr": [],
+      "orthogonal": [],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "closed_class"
+        ],
+        "definition_strength": "weak",
+        "needs_curation": true,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "empty",
+        "sufficiency_score": 0.2
+      }
+    },
+    "NUM.seven": {
+      "word": "seven",
+      "addr": "3@172.896",
+      "dom": "NUM",
+      "shell": 3,
+      "theta": 172.896,
+      "kappa": 3.447321,
+      "synonyms_ptr": [],
+      "orthogonal": [],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "closed_class"
+        ],
+        "definition_strength": "weak",
+        "needs_curation": true,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "empty",
+        "sufficiency_score": 0.2
+      }
+    },
+    "INTERJ.wow": {
+      "word": "wow",
+      "addr": "15@213.0202",
+      "dom": "INTERJ",
+      "shell": 15,
+      "theta": 213.0202,
+      "kappa": 15.389436,
+      "synonyms_ptr": [],
+      "orthogonal": [
+        "VERBA.amuse",
+        "NOUNA.bang",
+        "VERBA.beguile",
+        "NOUNA.belly_laugh",
+        "NOUNA.best_seller"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "closed_class",
+          "datamuse"
+        ],
+        "definition_strength": "weak",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.3
+      }
+    },
+    "NOUNP.shakespeare": {
+      "word": "shakespeare",
+      "addr": "10@214.1473",
+      "dom": "NOUNP",
+      "shell": 10,
+      "theta": 214.1473,
+      "kappa": 10.352841,
+      "synonyms_ptr": [
+        "NOUNP.william_shakespeare",
+        "NOUNP.shakspere",
+        "NOUNP.william_shakspere",
+        "NOUNP.bard_of_avon"
+      ],
+      "orthogonal": [
+        "ADJ.shakespearian",
+        "ADJ.shakespearean"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "wordnet"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "partial",
+        "sufficiency_score": 0.9
+      }
+    },
+    "ADJ.hot": {
+      "word": "hot",
+      "addr": "13@29.558",
+      "dom": "ADJ",
+      "shell": 13,
+      "theta": 29.558,
+      "kappa": 13.382646,
+      "synonyms_ptr": [
+        "ADJ.red-hot",
+        "ADJ.white",
+        "ADJ.white-hot",
+        "ADJ.overheated",
+        "ADJ.sweltering",
+        "ADJ.calorific",
+        "ADJ.tropical",
+        "ADJ.tropic"
+      ],
+      "orthogonal": [
+        "NOUNA.hotness",
+        "ADJ.warm",
+        "ADJ.ok",
+        "NOUNP.titian",
+        "ADJ.abandoned"
+      ],
+      "opposite": "ADJ.cold",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNC.house": {
+      "word": "house",
+      "addr": "7@135.9718",
+      "dom": "NOUNC",
+      "shell": 7,
+      "theta": 135.9718,
+      "kappa": 7.546965,
+      "synonyms_ptr": [
+        "NOUNC.building",
+        "NOUNC.edifice",
+        "NOUNC.dwelling",
+        "NOUNC.home",
+        "NOUNC.domicile",
+        "NOUNC.abode",
+        "NOUNA.habitation",
+        "NOUNC.dwelling_house"
+      ],
+      "orthogonal": [
+        "VERBS.house",
+        "NOUNC.government_building",
+        "NOUNC.packinghouse",
+        "NOUNA.ruin",
+        "NOUNC.library"
+      ],
+      "opposite": "",
+      "curation": {
+        "auto_sources": [
+          "wordnet"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      }
+    },
+    "VERBA.open": {
+      "word": "open",
+      "addr": "11@146.6774",
+      "dom": "VERBA",
+      "shell": 11,
+      "theta": 146.6774,
+      "kappa": 11.494854,
+      "synonyms_ptr": [
+        "VERBA.open_up",
+        "VERBA.activate",
+        "VERBA.adumbrate",
+        "VERBA.advertise",
+        "VERBA.afford",
+        "VERBS.air",
+        "VERBA.announce",
+        "VERBS.appropriate"
+      ],
+      "orthogonal": [
+        "NOUNA.opener",
+        "NOUNC.opening",
+        "NOUNP.spartan",
+        "ADJ.abandoned",
+        "ADJ.aboveboard"
+      ],
+      "opposite": "VERBA.close",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    }
+  }
+}

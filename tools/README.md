@@ -1,81 +1,80 @@
 # WordDict lexicon builder
 
-Deterministic toolchain that scans two online dictionaries and emits a
-`lexicon-1.0` library exactly matching `word_dict_structure.json`.
+Deterministic toolchain that scans dictionaries and emits a `lexicon-1.0`
+library exactly matching `word_dict_structure.json` — **100% schema-valid by
+construction** and gated by an independent validator.
 
-* **Dictionary #1 — Princeton WordNet** (via `nltk`): the word list, part of
-  speech, definitions, synonyms, antonyms and taxonomic relations.
-* **Dictionary #2 — Datamuse API** (`api.datamuse.com`): a bounded, cached
-  enrichment pass that fills antonyms / related / synonym pointers WordNet
-  leaves empty.
+## Sources
 
-The output is **100% schema-valid by construction** and gated by an independent
-validator (`validate_lexicon.py`) that asserts every consistency invariant.
+| Source | Role |
+|--------|------|
+| **Princeton WordNet 3.0** (via `nltk`) | Word list, part of speech, definitions, synonyms, antonyms, taxonomy. The structural backbone. |
+| **Moby Thesaurus II** (public domain) | Offline synonym/related breadth — no rate limits, fills `ptr`/`ptr_orthogonal` for every common word. |
+| **wordfreq** | Real-corpus frequency for ranking the trim and filtering noise. |
+| **Datamuse API** | *Optional* online polish (`--enrich`); the offline build is already complete without it. |
+
+The first three are fully offline after a one-time download, so a build needs
+no network and is completely reproducible.
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `build_lexicon.py`  | Main generator (ingest → place → link → enrich → curate → emit). |
-| `validate_lexicon.py` | Independent invariant checker. Exits non-zero on any violation. |
-| `closed_class.py`   | Authoritative function-word seeds (PRON/DET/NUM/PREP/CONJ/AUX/INTERJ). |
-| `datamuse_enrich.py`| Cached, budgeted Datamuse enrichment (dictionary #2). |
+| `fetch_sources.py`   | Download WordNet (nltk) + Moby thesaurus. Run once. |
+| `build_lexicon.py`   | Generator: ingest → place → link → offline-enrich → (datamuse) → curate → emit. |
+| `offline_enrich.py`  | Moby synonyms + WordNet antonym closure + coverage report. |
+| `validate_lexicon.py`| Independent invariant checker. Exits non-zero on any violation. |
+| `closed_class.py`    | Authoritative function-word seeds (PRON/DET/NUM/PREP/CONJ/AUX/INTERJ). |
+| `datamuse_enrich.py` | Optional cached/bounded Datamuse polish pass. |
 
-## One-time setup
-
-```bash
-pip install nltk
-python -c "import nltk; nltk.download('wordnet'); nltk.download('omw-1.4')"
-```
-
-## Build
+## Quick start
 
 ```bash
-# full build: ~120k entries, with cached Datamuse enrichment, minified
-python tools/build_lexicon.py \
-    --out libs/word_dict_75k_lib.json \
-    --max-entries 120000 \
-    --enrich --enrich-budget 30000 \
-    --minify
+pip install nltk wordfreq
+python tools/fetch_sources.py
 
-# validate (must print PASSED and exit 0)
+# build ~120k entries (offline, no network), minified
+python tools/build_lexicon.py --max-entries 120000 --minify
+
+# validate — must print PASSED and exit 0
 python tools/validate_lexicon.py libs/word_dict_75k_lib.json
 ```
 
-### Key flags
+Optional online polish (adds antonyms/synonyms WordNet+Moby miss; cached &
+resumable, capped to stay under Datamuse's ~100k/day limit):
 
-| Flag | Default | Meaning |
-|------|---------|---------|
-| `--out` | `libs/word_dict_75k_lib.json` | Output path. |
-| `--max-entries` | `0` (no cap) | Trim to N entries, keeping the most frequent words + all function words. |
-| `--max-tokens` | `3` | Max tokens in a multiword (`underscore_separated`) lemma. |
-| `--no-multiword` | off | Single-word lemmas only. |
-| `--enrich` | off | Run the Datamuse enrichment pass. |
-| `--enrich-budget` | `25000` | Max **new** Datamuse word lookups per run (×3 sub-requests each; stay under Datamuse's 100k/day). |
-| `--cache` | `.cache/datamuse.json` | Enrichment cache; re-runs are free and resumable. |
-| `--minify` | off | Compact JSON (smaller file). |
+```bash
+python tools/build_lexicon.py --max-entries 120000 --minify --enrich
+```
 
 ## How the schema is satisfied
 
-* **Domains.** WordNet lexicographer files map to the 19 schema domains, e.g.
-  `noun.substance`/`noun.food` → `NOUNM` (mass), abstract `noun.*` → `NOUNA`,
-  named entities → `NOUNP`, `verb.stative|cognition|emotion|perception` →
-  `VERBS` (else `VERBA`). Function-word domains come from `closed_class.py`.
-* **Geometry.** `shell` is the domain ring; `theta` spreads words around the
-  circle with the golden angle and is nudged to a unique 4-decimal value per
-  shell; `kappa` is a deterministic per-word curvature signature;
-  `addr = "<shell>@<theta>"` is therefore globally unique.
-* **Pointers.** Resolved in two passes against an address index, so every
-  pointer targets an existing entry (no dangling refs). `ptr` = synonyms /
-  hypernyms; `ptr_orthogonal` (≤5) = cross-POS derivations, coordinate sisters,
-  holonyms, Datamuse "triggers"; `ptr_oppositional` = a single antonym.
-* **Curation.** `definition_strength`, `orthogonal_status`,
-  `oppositional_status`, `needs_curation`, `auto_sources` and
-  `sufficiency_score` are derived from the resolved pointer counts so the
-  status↔cardinality invariants hold automatically.
+* **Domains.** WordNet lexicographer files map to the 19 schema domains:
+  `noun.substance|food`→`NOUNM`, abstract `noun.*`→`NOUNA`, named entities→
+  `NOUNP`, `verb.stative|cognition|emotion|perception`→`VERBS` (else `VERBA`),
+  else concrete→`NOUNC`. Function words come from `closed_class.py`.
+* **Geometry.** `shell` = domain ring; `theta` spreads words around the circle
+  with the golden angle, nudged to a unique 4-decimal value per shell; `kappa`
+  is a deterministic per-word curvature signature; `addr = "<shell>@<theta>"`
+  is therefore globally unique.
+* **Pointers (two-pass, never dangling).**
+  * `ptr` — WordNet synset synonyms, adjective `similar_to` clusters, hypernyms,
+    then same-POS Moby synonyms. High precision (curated, same part of speech).
+  * `ptr_orthogonal` (≤5) — cross-POS derivations, coordinate sisters, holonyms,
+    plus Moby relatives. "Related but on a different axis."
+  * `ptr_oppositional` — a single antonym from WordNet's full closure: direct,
+    adjective-satellite (`similar_to`→head antonym), and derivational
+    propagation across POS (happy/unhappy → happily/unhappily). Curated only —
+    no noisy morphological guessing.
+* **Curation.** Status/score fields are derived from the resolved pointer counts
+  so the status↔cardinality invariants hold automatically.
 
-## Determinism
+## Quality controls
 
-Given a fixed WordNet version and Datamuse cache, the build is fully
-reproducible: lemmas are processed in sorted order and every tie-break is
-explicit. Delete `.cache/datamuse.json` to refetch from Datamuse.
+* **No noise/garbage.** Roman numerals dropped (keep-list spares real words like
+  `mix`/`cd`/`iv`); only same-POS words enter `ptr`; the trim keeps genuinely
+  frequent words (wordfreq) and sheds the obscure tail.
+* **Determinism.** Fixed WordNet + Moby ⇒ identical output every run; all
+  tie-breaks are explicit.
+* **Self-check.** Every build prints a coverage report; `validate_lexicon.py`
+  asserts all consistency invariants independently of the builder.

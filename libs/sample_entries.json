@@ -1,0 +1,891 @@
+{
+  "_note": "Verbatim schema-shaped sample of real entries.",
+  "entries": {
+    "NOUNA.love": {
+      "addr": "9@282.5631",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNA",
+      "kappa": 9.495471,
+      "ptr": [
+        "9@243.6962",
+        "10@276.9876",
+        "10@109.2547",
+        "10@250.1166",
+        "10@272.9041",
+        "9@75.9633",
+        "10@261.2583",
+        "10@25.4744"
+      ],
+      "ptr_oppositional": "9@152.229",
+      "ptr_orthogonal": [
+        "12@60.3495",
+        "9@152.229",
+        "9@141.9651",
+        "9@335.3888",
+        "9@49.7594"
+      ],
+      "shell": 9,
+      "theta": 282.5631,
+      "word": "love"
+    },
+    "VERBS.love": {
+      "addr": "12@60.3495",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "VERBS",
+      "kappa": 12.495471,
+      "ptr": [
+        "12@295.0776",
+        "12@315.1398",
+        "12@92.6475",
+        "12@87.9115",
+        "11@179.868",
+        "11@352.764"
+      ],
+      "ptr_oppositional": "12@81.1025",
+      "ptr_orthogonal": [
+        "13@169.8919",
+        "13@32.3842",
+        "9@282.5631",
+        "7@220.3276",
+        "10@276.9876"
+      ],
+      "shell": 12,
+      "theta": 60.3495,
+      "word": "love"
+    },
+    "VERBA.run": {
+      "addr": "11@34.5579",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "VERBA",
+      "kappa": 11.386505,
+      "ptr": [
+        "11@298.8826",
+        "11@210.117",
+        "11@168.3854",
+        "11@43.6652",
+        "12@52.5233",
+        "11@347.6009",
+        "11@40.1242",
+        "11@87.9115"
+      ],
+      "ptr_oppositional": "11@58.6028",
+      "ptr_orthogonal": [
+        "9@177.8042",
+        "7@16.0114",
+        "9@165.4051",
+        "11@22.3605",
+        "11@148.7118"
+      ],
+      "shell": 11,
+      "theta": 34.5579,
+      "word": "run"
+    },
+    "ADJ.happy": {
+      "addr": "13@223.898",
+      "curation": {
+        "auto_sources": [
+          "wordnet"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "ADJ",
+      "kappa": 13.347205,
+      "ptr": [
+        "13@112.6088",
+        "13@56.429",
+        "13@95.8623",
+        "13@292.563",
+        "13@131.98",
+        "13@177.5312",
+        "13@354.7599",
+        "13@168.3084"
+      ],
+      "ptr_oppositional": "13@213.394",
+      "ptr_orthogonal": [
+        "9@181.7631",
+        "13@294.7752",
+        "13@198.4474",
+        "13@255.078",
+        "13@238.3077"
+      ],
+      "shell": 13,
+      "theta": 223.898,
+      "word": "happy"
+    },
+    "ADJ.cold": {
+      "addr": "13@280.9319",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "ADJ",
+      "kappa": 13.367,
+      "ptr": [
+        "13@338.1527",
+        "13@232.2758",
+        "13@10.9639",
+        "13@298.7579",
+        "13@197.9433",
+        "13@156.615",
+        "13@18.8048",
+        "13@165.0936"
+      ],
+      "ptr_oppositional": "13@29.558",
+      "ptr_orthogonal": [
+        "9@347.1354",
+        "9@164.7674",
+        "13@176.3123",
+        "13@248.9601",
+        "10@287.3138"
+      ],
+      "shell": 13,
+      "theta": 280.9319,
+      "word": "cold"
+    },
+    "ADJ.beautiful": {
+      "addr": "13@203.0203",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "ADJ",
+      "kappa": 13.306076,
+      "ptr": [
+        "13@90.1951",
+        "13@150.924",
+        "13@13.4163",
+        "13@133.9521",
+        "13@294.0842",
+        "13@92.959",
+        "13@65.5125",
+        "13@116.2121"
+      ],
+      "ptr_oppositional": "13@119.2014",
+      "ptr_orthogonal": [
+        "13@19.2318",
+        "13@51.3906",
+        "13@180.7221",
+        "13@141.5528",
+        "13@197.0031"
+      ],
+      "shell": 13,
+      "theta": 203.0203,
+      "word": "beautiful"
+    },
+    "NOUNM.water": {
+      "addr": "8@202.5547",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNM",
+      "kappa": 8.447086,
+      "ptr": [
+        "8@336.7469",
+        "8@71.9567",
+        "10@105.1712",
+        "10@295.2023",
+        "10@81.9181",
+        "10@272.5631",
+        "10@50.0709",
+        "10@187.5787"
+      ],
+      "ptr_oppositional": "9@113.0597",
+      "ptr_orthogonal": [
+        "13@43.5882",
+        "11@149.4028",
+        "7@152.5258",
+        "7@120.0646",
+        "9@285.8548"
+      ],
+      "shell": 8,
+      "theta": 202.5547,
+      "word": "water"
+    },
+    "NOUNC.dog": {
+      "addr": "7@39.5194",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      },
+      "dom": "NOUNC",
+      "kappa": 7.375595,
+      "ptr": [
+        "7@220.0784",
+        "10@126.0251",
+        "7@35.0858",
+        "7@257.578",
+        "7@30.0473",
+        "7@292.6638",
+        "10@71.8944",
+        "10@245.9084"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "7@44.039",
+        "10@73.5018",
+        "7@133.9374",
+        "7@266.5789",
+        "7@129.0382"
+      ],
+      "shell": 7,
+      "theta": 39.5194,
+      "word": "dog"
+    },
+    "NOUNC.computer": {
+      "addr": "7@256.5223",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      },
+      "dom": "NOUNC",
+      "kappa": 7.278329,
+      "ptr": [
+        "7@9.2319",
+        "7@231.7241",
+        "7@77.6715",
+        "7@282.2368",
+        "7@335.211",
+        "10@284.5737",
+        "7@345.7919",
+        "7@48.9053"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "12@357.5",
+        "11@236.5995",
+        "7@189.109",
+        "7@258.115",
+        "7@326.4922"
+      ],
+      "shell": 7,
+      "theta": 256.5223,
+      "word": "computer"
+    },
+    "ADV.quickly": {
+      "addr": "14@253.2067",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "ADV",
+      "kappa": 14.306816,
+      "ptr": [
+        "14@70.8387",
+        "14@181.0484",
+        "14@316.6848",
+        "14@161.6149",
+        "14@348.719",
+        "14@153.9519",
+        "14@4.045",
+        "14@127.3447"
+      ],
+      "ptr_oppositional": "14@150.3962",
+      "ptr_orthogonal": [
+        "14@155.0699",
+        "14@75.9395",
+        "14@350.955",
+        "14@293.0047",
+        "14@340.792"
+      ],
+      "shell": 14,
+      "theta": 253.2067,
+      "word": "quickly"
+    },
+    "ADV.always": {
+      "addr": "14@211.2112",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "ADV",
+      "kappa": 14.386129,
+      "ptr": [
+        "14@27.8883",
+        "14@349.573",
+        "14@293.2686",
+        "14@130.9627",
+        "14@320.9938",
+        "14@13.5171",
+        "14@118.9907",
+        "14@282.4146"
+      ],
+      "ptr_oppositional": "14@271.7238",
+      "ptr_orthogonal": [
+        "14@79.9845",
+        "14@217.4923",
+        "14@38.0513",
+        "14@333.1289",
+        "14@320.0389"
+      ],
+      "shell": 14,
+      "theta": 211.2112,
+      "word": "always"
+    },
+    "VERBA.buy": {
+      "addr": "11@344.837",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "VERBA",
+      "kappa": 11.384603,
+      "ptr": [
+        "11@39.5579",
+        "11@101.9179",
+        "11@87.9115",
+        "11@242.5543",
+        "11@197.6941",
+        "12@20.0621",
+        "11@302.7407",
+        "11@310.4037"
+      ],
+      "ptr_oppositional": "11@91.1262",
+      "ptr_orthogonal": [
+        "7@343.2535",
+        "7@120.7612",
+        "9@300.994",
+        "9@316.5308",
+        "7@214.4973"
+      ],
+      "shell": 11,
+      "theta": 344.837,
+      "word": "buy"
+    },
+    "VERBA.rise": {
+      "addr": "11@343.8436",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "VERBA",
+      "kappa": 11.495012,
+      "ptr": [
+        "11@117.4071",
+        "12@55.4503",
+        "11@303.1292",
+        "11@70.5748",
+        "11@273.7967",
+        "11@75.6993",
+        "11@27.7252",
+        "11@165.2329"
+      ],
+      "ptr_oppositional": "11@240.8077",
+      "ptr_orthogonal": [
+        "9@226.2824",
+        "9@141.298",
+        "9@329.9233",
+        "11@163.0592",
+        "11@289.8376"
+      ],
+      "shell": 11,
+      "theta": 343.8436,
+      "word": "rise"
+    },
+    "NOUNA.success": {
+      "addr": "9@315.3743",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNA",
+      "kappa": 9.312101,
+      "ptr": [
+        "9@266.7476",
+        "9@152.3536",
+        "9@289.8614",
+        "9@290.1253",
+        "7@242.8036",
+        "10@19.5581",
+        "10@253.1297",
+        "10@1.7558"
+      ],
+      "ptr_oppositional": "9@209.1621",
+      "ptr_orthogonal": [
+        "7@252.0446",
+        "9@30.412",
+        "9@217.2522",
+        "9@158.5486",
+        "9@287.5777"
+      ],
+      "shell": 9,
+      "theta": 315.3743,
+      "word": "success"
+    },
+    "NOUNA.freedom": {
+      "addr": "9@113.7506",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      },
+      "dom": "NOUNA",
+      "kappa": 9.396409,
+      "ptr": [
+        "7@39.917",
+        "9@98.6647",
+        "9@61.4675",
+        "9@77.9116",
+        "9@178.2222",
+        "9@315.7299",
+        "9@205.9473",
+        "9@146.6151"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "9@209.3014",
+        "7@80.9247",
+        "9@313.9447",
+        "9@7.2213",
+        "9@31.4769"
+      ],
+      "shell": 9,
+      "theta": 113.7506,
+      "word": "freedom"
+    },
+    "PRON.i": {
+      "addr": "1@230.1553",
+      "curation": {
+        "auto_sources": [
+          "closed_class",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "PRON",
+      "kappa": 1.581214,
+      "ptr": [
+        "1@347.6009",
+        "1@125.1087",
+        "1@40.1242",
+        "1@177.632",
+        "1@315.1398",
+        "1@7.663",
+        "1@197.6941",
+        "1@112.7096"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "9@93.7655",
+        "11@296.1957",
+        "7@327.2749",
+        "9@318.9209",
+        "8@130.2718"
+      ],
+      "shell": 1,
+      "theta": 230.1553,
+      "word": "i"
+    },
+    "DET.the": {
+      "addr": "2@27.7252",
+      "curation": {
+        "auto_sources": [
+          "closed_class"
+        ],
+        "definition_strength": "weak",
+        "needs_curation": true,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "empty",
+        "sufficiency_score": 0.2
+      },
+      "dom": "DET",
+      "kappa": 2.378572,
+      "ptr": [],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [],
+      "shell": 2,
+      "theta": 27.7252,
+      "word": "the"
+    },
+    "PREP.under": {
+      "addr": "4@75.5124",
+      "curation": {
+        "auto_sources": [
+          "closed_class",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      },
+      "dom": "PREP",
+      "kappa": 4.447655,
+      "ptr": [
+        "4@315.1398",
+        "4@92.6475",
+        "4@27.7252",
+        "4@213.0202"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "13@131.025",
+        "13@1.3434",
+        "13@152.7953",
+        "13@5.8155",
+        "13@186.3746"
+      ],
+      "shell": 4,
+      "theta": 75.5124,
+      "word": "under"
+    },
+    "CONJ.because": {
+      "addr": "5@105.0466",
+      "curation": {
+        "auto_sources": [
+          "closed_class",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "CONJ",
+      "kappa": 5.473143,
+      "ptr": [
+        "5@327.5388",
+        "5@72.5854",
+        "5@347.6009",
+        "5@165.2329",
+        "5@290.3416"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "6@190.0311",
+        "9@176.3123",
+        "14@282.5778",
+        "9@78.6502",
+        "9@354.0542"
+      ],
+      "shell": 5,
+      "theta": 105.0466,
+      "word": "because"
+    },
+    "AUX.would": {
+      "addr": "6@80.2484",
+      "curation": {
+        "auto_sources": [
+          "closed_class"
+        ],
+        "definition_strength": "weak",
+        "needs_curation": true,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "empty",
+        "sufficiency_score": 0.2
+      },
+      "dom": "AUX",
+      "kappa": 6.446048,
+      "ptr": [],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [],
+      "shell": 6,
+      "theta": 80.2484,
+      "word": "would"
+    },
+    "NUM.seven": {
+      "addr": "3@172.896",
+      "curation": {
+        "auto_sources": [
+          "closed_class"
+        ],
+        "definition_strength": "weak",
+        "needs_curation": true,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "empty",
+        "sufficiency_score": 0.2
+      },
+      "dom": "NUM",
+      "kappa": 3.447321,
+      "ptr": [],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [],
+      "shell": 3,
+      "theta": 172.896,
+      "word": "seven"
+    },
+    "INTERJ.wow": {
+      "addr": "15@213.0202",
+      "curation": {
+        "auto_sources": [
+          "closed_class",
+          "datamuse"
+        ],
+        "definition_strength": "weak",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.3
+      },
+      "dom": "INTERJ",
+      "kappa": 15.389436,
+      "ptr": [],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "11@198.8121",
+        "9@359.8992",
+        "11@306.0948",
+        "9@184.5032",
+        "9@147.306"
+      ],
+      "shell": 15,
+      "theta": 213.0202,
+      "word": "wow"
+    },
+    "NOUNP.shakespeare": {
+      "addr": "10@214.1473",
+      "curation": {
+        "auto_sources": [
+          "wordnet"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "partial",
+        "sufficiency_score": 0.9
+      },
+      "dom": "NOUNP",
+      "kappa": 10.352841,
+      "ptr": [
+        "10@208.0916",
+        "10@44.1784",
+        "10@345.5994",
+        "10@160.8231"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "13@71.7789",
+        "13@294.2711"
+      ],
+      "shell": 10,
+      "theta": 214.1473,
+      "word": "shakespeare"
+    },
+    "ADJ.hot": {
+      "addr": "13@29.558",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "ADJ",
+      "kappa": 13.382646,
+      "ptr": [
+        "13@81.0878",
+        "13@84.8304",
+        "13@327.3848",
+        "13@51.6545",
+        "13@234.675",
+        "13@333.7191",
+        "13@45.498",
+        "13@267.9902"
+      ],
+      "ptr_oppositional": "13@280.9319",
+      "ptr_orthogonal": [
+        "9@213.9604",
+        "13@303.2776",
+        "13@301.4448",
+        "10@221.7095",
+        "13@295.0776"
+      ],
+      "shell": 13,
+      "theta": 29.558,
+      "word": "hot"
+    },
+    "NOUNC.house": {
+      "addr": "7@135.9718",
+      "curation": {
+        "auto_sources": [
+          "wordnet"
+        ],
+        "definition_strength": "central",
+        "needs_curation": true,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.8
+      },
+      "dom": "NOUNC",
+      "kappa": 7.546965,
+      "ptr": [
+        "7@25.8777",
+        "7@95.8238",
+        "7@46.9185",
+        "7@211.0572",
+        "7@207.6793",
+        "7@47.7873",
+        "9@188.3082",
+        "7@184.4262"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "12@181.4131",
+        "7@166.2977",
+        "7@189.2099",
+        "9@255.1256",
+        "7@63.0216"
+      ],
+      "shell": 7,
+      "theta": 135.9718,
+      "word": "house"
+    },
+    "VERBA.open": {
+      "addr": "11@146.6774",
+      "curation": {
+        "auto_sources": [
+          "wordnet",
+          "datamuse"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "filled",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "VERBA",
+      "kappa": 11.494854,
+      "ptr": [
+        "11@61.6929",
+        "11@160.4969",
+        "11@50.7143",
+        "11@18.2531",
+        "11@175.823",
+        "12@335.2019",
+        "11@16.4441",
+        "12@140.4348"
+      ],
+      "ptr_oppositional": "11@182.9582",
+      "ptr_orthogonal": [
+        "9@358.8288",
+        "7@308.0375",
+        "10@124.1629",
+        "13@295.0776",
+        "13@15.3261"
+      ],
+      "shell": 11,
+      "theta": 146.6774,
+      "word": "open"
+    }
+  }
+}

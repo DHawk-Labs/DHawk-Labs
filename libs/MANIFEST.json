@@ -1,0 +1,38 @@
+{
+  "library": "WordDict.75k",
+  "version": "1.0.0",
+  "schema": "lexicon-1.0",
+  "kind": "lexicon",
+  "trust_level": "derived",
+  "total_entries": 120000,
+  "sources": [
+    "Princeton WordNet 3.0 (nltk) \u2014 words, POS, synonyms, antonyms, taxonomy",
+    "Moby Thesaurus II (public domain) \u2014 synonym/related breadth",
+    "wordfreq \u2014 real-corpus frequency ranking & noise filtering",
+    "Datamuse API \u2014 optional online polish (tools/build_lexicon.py --enrich)"
+  ],
+  "domain_counts": {
+    "NOUNC": 37761,
+    "NOUNA": 24322,
+    "NOUNP": 21462,
+    "ADJ": 17021,
+    "VERBA": 8208,
+    "NOUNM": 5323,
+    "ADV": 3698,
+    "VERBS": 1766,
+    "NUM": 86,
+    "PREP": 78,
+    "INTERJ": 77,
+    "PRON": 75,
+    "CONJ": 50,
+    "DET": 40,
+    "AUX": 33
+  },
+  "coverage": {
+    "ptr_ge_1_pct": 94.2,
+    "ptr_ge_3_pct": 56.9,
+    "orthogonal_ge_3_pct": 69.0,
+    "entries_with_antonym": 21685
+  },
+  "multiword_entries": 50705
+}
