@@ -22,7 +22,10 @@ VALID_DEF_STRENGTH = {"central", "partial", "weak"}
 VALID_ORTH_STATUS = {"filled", "partial", "empty"}
 VALID_OPP_STATUS = {"filled", "empty", "not_applicable"}
 ADDR_RE = re.compile(r"^\d+@\d+(\.\d+)?$")
-WORD_RE = re.compile(r"^[a-z]+(?:[-'_][a-z]+)*$|^[aio]$")
+# Lowercase alphanumeric tokens joined by - ' _ . Digits are permitted because
+# scientific/medical terms need them (covid-19, vitamin-b12, interleukin-6);
+# the general dictionary simply never produces any, so this stays valid there.
+WORD_RE = re.compile(r"^[a-z0-9]+(?:[-'_][a-z0-9]+)*$")
 
 # POS classes that legitimately cannot take an antonym (schema invariant text:
 # proper nouns, mass nouns, numerals — plus other non-gradable closed classes).

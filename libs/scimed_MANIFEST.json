@@ -1,0 +1,27 @@
+{
+  "library": "SciMedDict",
+  "version": "1.0.0",
+  "schema": "lexicon-1.0",
+  "kind": "lexicon",
+  "trust_level": "absorbed",
+  "total_entries": 117854,
+  "domain_mapping": "MeSH category -> schema domain (A/B->NOUNC, C/F/G/I/K->NOUNA, D->NOUNM, E/H/J/L/N->JARGON, M->NOUNC, V->META, Z->NOUNP)",
+  "sources": [
+    "MeSH 2025 Descriptors (U.S. National Library of Medicine, public domain) \u2014 terms, entry-term synonyms, tree-number hierarchy, subject categories"
+  ],
+  "domain_counts": {
+    "NOUNM": 41411,
+    "NOUNA": 34043,
+    "NOUNC": 24484,
+    "JARGON": 16869,
+    "NOUNP": 703,
+    "META": 344
+  },
+  "coverage": {
+    "ptr_ge_1_pct": 99.8,
+    "ptr_ge_3_pct": 86.8,
+    "orthogonal_ge_3_pct": 70.0
+  },
+  "multiword_entries": 80247,
+  "entries_with_digits": 10287
+}

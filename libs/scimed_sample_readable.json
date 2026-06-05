@@ -1,0 +1,444 @@
+{
+  "_note": "Human-readable preview of SciMedDict; pointers resolved to words.",
+  "entries": {
+    "NOUNM.aspirin": {
+      "word": "aspirin",
+      "dom": "NOUNM",
+      "shell": 8,
+      "addr": "8@90.109",
+      "synonyms_ptr": [
+        "NOUNM.acetylsalicylic_acid",
+        "NOUNM.acetysal",
+        "NOUNM.acylpyrin",
+        "NOUNM.aloxiprimum",
+        "NOUNM.colfarit",
+        "NOUNM.dispril",
+        "NOUNM.easprin",
+        "NOUNM.ecotrin"
+      ],
+      "related_orthogonal": [
+        "NOUNM.aminosalicylic_acids",
+        "NOUNM.dicamba",
+        "NOUNM.diflunisal",
+        "NOUNM.gentisates",
+        "NOUNM.salicylic_acid"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNA.myocardial_infarction": {
+      "word": "myocardial_infarction",
+      "dom": "NOUNA",
+      "shell": 9,
+      "addr": "9@305.7391",
+      "synonyms_ptr": [
+        "NOUNA.cardiovascular_stroke",
+        "NOUNA.heart_attack",
+        "NOUNA.myocardial_infarct",
+        "NOUNA.cardiovascular_strokes",
+        "NOUNA.heart_attacks",
+        "NOUNA.myocardial_infarctions",
+        "NOUNA.myocardial_infarcts",
+        "NOUNA.myocardial_ischemia"
+      ],
+      "related_orthogonal": [
+        "NOUNA.angina_pectoris",
+        "NOUNA.coronary_disease",
+        "NOUNA.myocardial_reperfusion_injury",
+        "NOUNA.acute_coronary_syndrome",
+        "NOUNA.kounis_syndrome"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNM.insulin": {
+      "word": "insulin",
+      "dom": "NOUNM",
+      "shell": 8,
+      "addr": "8@11.0885",
+      "synonyms_ptr": [
+        "NOUNM.iletin",
+        "NOUNM.insulin_a_chain",
+        "NOUNM.insulin_b_chain",
+        "NOUNM.novolin",
+        "NOUNM.sodium_insulin",
+        "NOUNM.soluble_insulin",
+        "NOUNM.regular_insulin",
+        "NOUNM.proinsulin"
+      ],
+      "related_orthogonal": [
+        "NOUNM.c-peptide"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "partial",
+        "sufficiency_score": 0.7333
+      }
+    },
+    "NOUNM.dna": {
+      "word": "dna",
+      "dom": "NOUNM",
+      "shell": 8,
+      "addr": "8@165.9715",
+      "synonyms_ptr": [
+        "NOUNM.deoxyribonucleic_acid",
+        "NOUNM.ds-dna",
+        "NOUNM.double-stranded_dna",
+        "NOUNM.nucleic_acids"
+      ],
+      "related_orthogonal": [
+        "NOUNM.nucleic_acid_heteroduplexes",
+        "NOUNM.rna",
+        "NOUNM.nucleic_acid_probes",
+        "NOUNM.immobilized_nucleic_acids",
+        "NOUNM.cell-free_nucleic_acids"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNA.asthma": {
+      "word": "asthma",
+      "dom": "NOUNA",
+      "shell": 9,
+      "addr": "9@252.7797",
+      "synonyms_ptr": [
+        "NOUNA.bronchial_asthma",
+        "NOUNA.asthmas",
+        "NOUNA.bronchial_diseases",
+        "NOUNA.respiratory_hypersensitivity"
+      ],
+      "related_orthogonal": [
+        "NOUNA.bronchial_fistula",
+        "NOUNA.bronchial_neoplasms",
+        "NOUNA.bronchial_spasm",
+        "NOUNA.bronchiectasis",
+        "NOUNA.bronchitis"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNM.penicillin": {
+      "word": "penicillin",
+      "dom": "NOUNM",
+      "shell": 8,
+      "addr": "8@353.8764",
+      "synonyms_ptr": [
+        "NOUNM.penicillins",
+        "NOUNM.penicillin_antibiotics",
+        "NOUNM.beta-lactams"
+      ],
+      "related_orthogonal": [
+        "NOUNM.cephalosporins",
+        "NOUNM.clavulanic_acids",
+        "NOUNM.monobactams",
+        "NOUNM.moxalactam",
+        "NOUNM.carbapenems"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh",
+          "mesh_entry"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.85
+      }
+    },
+    "NOUNM.interleukin-6": {
+      "word": "interleukin-6",
+      "dom": "NOUNM",
+      "shell": 8,
+      "addr": "8@50.5218",
+      "synonyms_ptr": [
+        "NOUNM.hepatocyte-stimulating_factor",
+        "NOUNM.hybridoma_growth_factor",
+        "NOUNM.il-6",
+        "NOUNM.mgi-2",
+        "NOUNM.myeloid_differentiation-inducing_protein",
+        "NOUNM.plasmacytoma_growth_factor",
+        "NOUNM.b-cell_differentiation_factor",
+        "NOUNM.b-cell_differentiation_factor-2"
+      ],
+      "related_orthogonal": [
+        "NOUNM.interleukin-1",
+        "NOUNM.interleukin-2",
+        "NOUNM.interleukin-3",
+        "NOUNM.interleukin-4",
+        "NOUNM.interleukin-5"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNM.glucose": {
+      "word": "glucose",
+      "dom": "NOUNM",
+      "shell": 8,
+      "addr": "8@293.9687",
+      "synonyms_ptr": [
+        "NOUNM.dextrose",
+        "NOUNM.anhydrous_dextrose",
+        "NOUNM.d-glucose",
+        "NOUNM.glucose_monohydrate",
+        "NOUNM.hexoses"
+      ],
+      "related_orthogonal": [
+        "NOUNM.fructose",
+        "NOUNM.galactose",
+        "NOUNM.mannose",
+        "NOUNM.sorbose"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNC.liver": {
+      "word": "liver",
+      "dom": "NOUNC",
+      "shell": 7,
+      "addr": "7@97.268",
+      "synonyms_ptr": [
+        "NOUNC.livers",
+        "NOUNC.digestive_system"
+      ],
+      "related_orthogonal": [
+        "NOUNC.biliary_tract",
+        "NOUNC.pancreas",
+        "NOUNC.gastrointestinal_tract"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "partial",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.7
+      }
+    },
+    "NOUNM.antibodies": {
+      "word": "antibodies",
+      "dom": "NOUNM",
+      "shell": 8,
+      "addr": "8@56.3667",
+      "synonyms_ptr": [
+        "NOUNM.immunoglobulins"
+      ],
+      "related_orthogonal": [
+        "NOUNM.gamma-globulins",
+        "NOUNM.immunoglobulin_constant_regions",
+        "NOUNM.immunoglobulin_fragments",
+        "NOUNM.immunoglobulin_variable_region",
+        "NOUNM.paraproteins"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "partial",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.55
+      }
+    },
+    "NOUNA.diabetes_mellitus": {
+      "word": "diabetes_mellitus",
+      "dom": "NOUNA",
+      "shell": 9,
+      "addr": "9@340.9789",
+      "synonyms_ptr": [
+        "NOUNA.glucose_metabolism_disorders",
+        "NOUNA.endocrine_system_diseases"
+      ],
+      "related_orthogonal": [
+        "NOUNA.glycosuria",
+        "NOUNA.hyperglycemia",
+        "NOUNA.hyperinsulinism",
+        "NOUNA.hypoglycemia",
+        "NOUNA.adrenal_gland_diseases"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "partial",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.7
+      }
+    },
+    "NOUNA.hypertension": {
+      "word": "hypertension",
+      "dom": "NOUNA",
+      "shell": 9,
+      "addr": "9@26.5539",
+      "synonyms_ptr": [
+        "NOUNA.high_blood_pressure",
+        "NOUNA.high_blood_pressures",
+        "NOUNA.vascular_diseases"
+      ],
+      "related_orthogonal": [
+        "NOUNA.aneurysm",
+        "NOUNA.angiomatosis",
+        "NOUNA.angioedema",
+        "NOUNA.aortic_diseases",
+        "NOUNA.arterial_occlusive_diseases"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.85
+      }
+    },
+    "JARGON.chemotherapy": {
+      "word": "chemotherapy",
+      "dom": "JARGON",
+      "shell": 17,
+      "addr": "17@160.1322",
+      "synonyms_ptr": [
+        "JARGON.drug_therapy",
+        "JARGON.pharmacotherapy",
+        "JARGON.chemotherapies",
+        "JARGON.drug_therapies",
+        "JARGON.pharmacotherapies",
+        "JARGON.therapeutics"
+      ],
+      "related_orthogonal": [
+        "JARGON.acoustic_stimulation",
+        "JARGON.complementary_therapies",
+        "JARGON.balneology",
+        "JARGON.bed_rest",
+        "JARGON.biological_therapy"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh",
+          "mesh_entry"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNC.mitochondria": {
+      "word": "mitochondria",
+      "dom": "NOUNC",
+      "shell": 7,
+      "addr": "7@241.22",
+      "synonyms_ptr": [
+        "NOUNC.mitochondrial_contraction",
+        "NOUNC.mitochondrion",
+        "NOUNC.mitochondrial_contractions",
+        "NOUNC.organelles",
+        "NOUNC.subcellular_fractions"
+      ],
+      "related_orthogonal": [
+        "NOUNC.cell_nucleus",
+        "NOUNC.endoplasmic_reticulum",
+        "NOUNC.golgi_apparatus",
+        "NOUNC.ribosomes",
+        "NOUNC.sarcomeres"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      }
+    },
+    "NOUNM.vaccines": {
+      "word": "vaccines",
+      "dom": "NOUNM",
+      "shell": 8,
+      "addr": "8@49.312",
+      "synonyms_ptr": [
+        "NOUNM.vaccine",
+        "NOUNM.biological_products"
+      ],
+      "related_orthogonal": [
+        "NOUNM.immune_sera",
+        "NOUNM.menotropins",
+        "NOUNM.picibanil",
+        "NOUNM.plant_preparations",
+        "NOUNM.plant_exudates"
+      ],
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "partial",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.7
+      }
+    }
+  }
+}

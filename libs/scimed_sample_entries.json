@@ -1,0 +1,489 @@
+{
+  "_note": "Verbatim schema-shaped sample.",
+  "entries": {
+    "NOUNM.aspirin": {
+      "addr": "8@90.109",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNM",
+      "kappa": 8.385262,
+      "ptr": [
+        "8@108.1367",
+        "8@128.1988",
+        "8@357.6631",
+        "8@316.584",
+        "8@137.3299",
+        "8@62.7339",
+        "8@6.3287",
+        "8@106.6393"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "8@46.0406",
+        "8@257.7649",
+        "8@278.9451",
+        "8@262.1985",
+        "8@120.9187"
+      ],
+      "shell": 8,
+      "theta": 90.109,
+      "word": "aspirin"
+    },
+    "NOUNA.myocardial_infarction": {
+      "addr": "9@305.7391",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNA",
+      "kappa": 9.303886,
+      "ptr": [
+        "9@29.2317",
+        "9@285.6532",
+        "9@168.2313",
+        "9@166.7395",
+        "9@63.161",
+        "9@83.2469",
+        "9@220.7546",
+        "9@358.2624"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "9@261.3976",
+        "9@265.9943",
+        "9@188.2935",
+        "9@213.4472",
+        "9@96.5385"
+      ],
+      "shell": 9,
+      "theta": 305.7391,
+      "word": "myocardial_infarction"
+    },
+    "NOUNM.insulin": {
+      "addr": "8@11.0885",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "partial",
+        "sufficiency_score": 0.7333
+      },
+      "dom": "NOUNM",
+      "kappa": 8.378244,
+      "ptr": [
+        "8@190.1025",
+        "8@168.6584",
+        "8@136.1972",
+        "8@64.3266",
+        "8@349.8552",
+        "8@153.2791",
+        "8@353.8379",
+        "8@198.1778"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "8@313.3546"
+      ],
+      "shell": 8,
+      "theta": 11.0885,
+      "word": "insulin"
+    },
+    "NOUNM.dna": {
+      "addr": "8@165.9715",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNM",
+      "kappa": 8.372516,
+      "ptr": [
+        "8@101.577",
+        "8@306.8333",
+        "8@123.3473",
+        "8@221.2055"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "8@338.6511",
+        "8@24.9171",
+        "8@253.6667",
+        "8@233.1537",
+        "8@150.9478"
+      ],
+      "shell": 8,
+      "theta": 165.9715,
+      "word": "dna"
+    },
+    "NOUNA.asthma": {
+      "addr": "9@252.7797",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNA",
+      "kappa": 9.3929,
+      "ptr": [
+        "9@99.154",
+        "9@30.2874",
+        "9@204.2006",
+        "9@226.2054"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "9@341.7084",
+        "9@309.2472",
+        "9@1.7705",
+        "9@54.2938",
+        "9@296.8481"
+      ],
+      "shell": 9,
+      "theta": 252.7797,
+      "word": "asthma"
+    },
+    "NOUNM.penicillin": {
+      "addr": "8@353.8764",
+      "curation": {
+        "auto_sources": [
+          "mesh",
+          "mesh_entry"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.85
+      },
+      "dom": "NOUNM",
+      "kappa": 8.251618,
+      "ptr": [
+        "8@126.6481",
+        "8@171.5084",
+        "8@306.2194"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "8@196.9261",
+        "8@139.8299",
+        "8@208.0531",
+        "8@289.4196",
+        "8@164.9928"
+      ],
+      "shell": 8,
+      "theta": 353.8764,
+      "word": "penicillin"
+    },
+    "NOUNM.interleukin-6": {
+      "addr": "8@50.5218",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNM",
+      "kappa": 8.372685,
+      "ptr": [
+        "8@341.2281",
+        "8@218.0915",
+        "8@267.4239",
+        "8@44.2022",
+        "8@36.7022",
+        "8@322.0054",
+        "8@223.3078",
+        "8@0.8156"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "8@104.8541",
+        "8@55.2578",
+        "8@285.4131",
+        "8@30.4596",
+        "8@220.4907"
+      ],
+      "shell": 8,
+      "theta": 50.5218,
+      "word": "interleukin-6"
+    },
+    "NOUNM.glucose": {
+      "addr": "8@293.9687",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNM",
+      "kappa": 8.387547,
+      "ptr": [
+        "8@18.8286",
+        "8@81.8558",
+        "8@220.4046",
+        "8@281.5696",
+        "8@357.6722"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "8@344.5199",
+        "8@84.1395",
+        "8@310.2735",
+        "8@248.8536"
+      ],
+      "shell": 8,
+      "theta": 293.9687,
+      "word": "glucose"
+    },
+    "NOUNC.liver": {
+      "addr": "7@97.268",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "partial",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.7
+      },
+      "dom": "NOUNC",
+      "kappa": 7.447205,
+      "ptr": [
+        "7@64.8068",
+        "7@204.2629"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "7@145.2331",
+        "7@256.1813",
+        "7@56.9184"
+      ],
+      "shell": 7,
+      "theta": 97.268,
+      "word": "liver"
+    },
+    "NOUNM.antibodies": {
+      "addr": "8@56.3667",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "partial",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.55
+      },
+      "dom": "NOUNM",
+      "kappa": 8.297758,
+      "ptr": [
+        "8@259.0699"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "8@187.3771",
+        "8@288.604",
+        "8@276.2049",
+        "8@69.0388",
+        "8@112.013"
+      ],
+      "shell": 8,
+      "theta": 56.3667,
+      "word": "antibodies"
+    },
+    "NOUNA.diabetes_mellitus": {
+      "addr": "9@340.9789",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "partial",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.7
+      },
+      "dom": "NOUNA",
+      "kappa": 9.412797,
+      "ptr": [
+        "9@48.0988",
+        "9@132.5939"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "9@281.1811",
+        "9@223.13",
+        "9@178.2698",
+        "9@117.3924",
+        "9@115.3727"
+      ],
+      "shell": 9,
+      "theta": 340.9789,
+      "word": "diabetes_mellitus"
+    },
+    "NOUNA.hypertension": {
+      "addr": "9@26.5539",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.85
+      },
+      "dom": "NOUNA",
+      "kappa": 9.379404,
+      "ptr": [
+        "9@80.0321",
+        "9@217.5399",
+        "9@279.7074"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "9@273.7967",
+        "9@171.6771",
+        "9@58.9675",
+        "9@99.5188",
+        "9@284.1228"
+      ],
+      "shell": 9,
+      "theta": 26.5539,
+      "word": "hypertension"
+    },
+    "JARGON.chemotherapy": {
+      "addr": "17@160.1322",
+      "curation": {
+        "auto_sources": [
+          "mesh",
+          "mesh_entry"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "JARGON",
+      "kappa": 17.365583,
+      "ptr": [
+        "17@109.0531",
+        "17@275.1639",
+        "17@22.6244",
+        "17@331.5454",
+        "17@137.6562",
+        "17@332.6487"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "17@73.7034",
+        "17@238.9987",
+        "17@347.7641",
+        "17@200.7842",
+        "17@99.7827"
+      ],
+      "shell": 17,
+      "theta": 160.1322,
+      "word": "chemotherapy"
+    },
+    "NOUNC.mitochondria": {
+      "addr": "7@241.22",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "central",
+        "needs_curation": false,
+        "oppositional_status": "empty",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 1.0
+      },
+      "dom": "NOUNC",
+      "kappa": 7.403369,
+      "ptr": [
+        "7@313.8054",
+        "7@333.8675",
+        "7@91.3132",
+        "7@28.526",
+        "7@178.9845"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "7@77.2829",
+        "7@95.3344",
+        "7@319.9619",
+        "7@292.0589",
+        "7@288.8679"
+      ],
+      "shell": 7,
+      "theta": 241.22,
+      "word": "mitochondria"
+    },
+    "NOUNM.vaccines": {
+      "addr": "8@49.312",
+      "curation": {
+        "auto_sources": [
+          "mesh"
+        ],
+        "definition_strength": "partial",
+        "needs_curation": false,
+        "oppositional_status": "not_applicable",
+        "orthogonal_status": "filled",
+        "sufficiency_score": 0.7
+      },
+      "dom": "NOUNM",
+      "kappa": 8.303412,
+      "ptr": [
+        "8@356.7887",
+        "8@331.4445"
+      ],
+      "ptr_oppositional": "",
+      "ptr_orthogonal": [
+        "8@345.8633",
+        "8@76.9273",
+        "8@339.8315",
+        "8@241.7569",
+        "8@286.6172"
+      ],
+      "shell": 8,
+      "theta": 49.312,
+      "word": "vaccines"
+    }
+  }
+}
