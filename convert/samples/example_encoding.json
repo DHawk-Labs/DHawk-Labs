@@ -1,0 +1,1545 @@
+{
+ "source": {
+  "type": "text",
+  "source": "convert/samples/mixed_prose.txt"
+ },
+ "lexicons": {
+  "libraries": [
+   "SciMedDict",
+   "WordDict.75k"
+  ],
+  "unique_words": 219581,
+  "addresses": 237854,
+  "multiword_first_tokens": 31983,
+  "max_phrase_len": 5
+ },
+ "config": {
+  "use_lemma": true,
+  "use_multiword": true,
+  "lib_priority": [
+   "SciMedDict",
+   "WordDict.75k"
+  ]
+ },
+ "stats": {
+  "word_tokens": 106,
+  "descriptors_emitted": 97,
+  "covered_tokens": 106,
+  "coverage_pct": 100.0,
+  "content_tokens": 59,
+  "content_resolved": 59,
+  "oov_occurrences": 0,
+  "content_coverage_pct": 100.0,
+  "unique_descriptors": 80,
+  "oov_unique": 0,
+  "domain_histogram": {
+   "NOUNA": 14,
+   "DET": 13,
+   "PREP": 12,
+   "ADJ": 11,
+   "VERBA": 11,
+   "NOUNM": 8,
+   "CONJ": 7,
+   "NOUNC": 6,
+   "JARGON": 4,
+   "VERBS": 3,
+   "PRON": 3,
+   "AUX": 2,
+   "ADV": 2,
+   "META": 1
+  },
+  "library_histogram": {
+   "WordDict.75k": 73,
+   "SciMedDict": 24
+  },
+  "via_histogram": {
+   "exact": 74,
+   "lemma": 13,
+   "phrase": 8,
+   "decomp": 2
+  }
+ },
+ "descriptors": [
+  {
+   "surface": "the",
+   "word": "the",
+   "lib": "WordDict.75k",
+   "addr": "2@27.7252",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 0
+  },
+  {
+   "surface": "patient",
+   "word": "patient",
+   "lib": "SciMedDict",
+   "addr": "7@298.5416",
+   "dom": "NOUNC",
+   "shell": 7,
+   "via": "exact",
+   "pos": 1
+  },
+  {
+   "surface": "presented",
+   "word": "present",
+   "lib": "WordDict.75k",
+   "addr": "12@84.4566",
+   "dom": "VERBS",
+   "shell": 12,
+   "via": "lemma",
+   "pos": 2
+  },
+  {
+   "surface": "with",
+   "word": "with",
+   "lib": "WordDict.75k",
+   "addr": "4@233.0823",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 3
+  },
+  {
+   "surface": "severe",
+   "word": "severe",
+   "lib": "WordDict.75k",
+   "addr": "13@129.0382",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 4
+  },
+  {
+   "surface": "chest pain",
+   "word": "chest_pain",
+   "lib": "SciMedDict",
+   "addr": "9@332.8265",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "phrase",
+   "pos": 5
+  },
+  {
+   "surface": "and",
+   "word": "and",
+   "lib": "WordDict.75k",
+   "addr": "5@190.0311",
+   "dom": "CONJ",
+   "shell": 5,
+   "via": "exact",
+   "pos": 7
+  },
+  {
+   "surface": "shortness of breath",
+   "word": "shortness_of_breath",
+   "lib": "SciMedDict",
+   "addr": "9@165.9183",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "phrase",
+   "pos": 8
+  },
+  {
+   "surface": "an",
+   "word": "an",
+   "lib": "WordDict.75k",
+   "addr": "2@275.0155",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 11
+  },
+  {
+   "surface": "electrocardiogram",
+   "word": "electrocardiogram",
+   "lib": "SciMedDict",
+   "addr": "17@213.4087",
+   "dom": "JARGON",
+   "shell": 17,
+   "via": "exact",
+   "pos": 12
+  },
+  {
+   "surface": "revealed",
+   "word": "reveal",
+   "lib": "WordDict.75k",
+   "addr": "12@138.0979",
+   "dom": "VERBS",
+   "shell": 12,
+   "via": "lemma",
+   "pos": 13
+  },
+  {
+   "surface": "an",
+   "word": "an",
+   "lib": "WordDict.75k",
+   "addr": "2@275.0155",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 14
+  },
+  {
+   "surface": "acute",
+   "word": "acute",
+   "lib": "WordDict.75k",
+   "addr": "13@126.2267",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 15
+  },
+  {
+   "surface": "myocardial infarction",
+   "word": "myocardial_infarction",
+   "lib": "SciMedDict",
+   "addr": "9@305.7391",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "phrase",
+   "pos": 16
+  },
+  {
+   "surface": "and",
+   "word": "and",
+   "lib": "WordDict.75k",
+   "addr": "5@190.0311",
+   "dom": "CONJ",
+   "shell": 5,
+   "via": "exact",
+   "pos": 18
+  },
+  {
+   "surface": "troponin",
+   "word": "troponin",
+   "lib": "SciMedDict",
+   "addr": "8@283.3492",
+   "dom": "NOUNM",
+   "shell": 8,
+   "via": "exact",
+   "pos": 19
+  },
+  {
+   "surface": "levels",
+   "word": "level",
+   "lib": "WordDict.75k",
+   "addr": "11@247.2519",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "lemma",
+   "pos": 20
+  },
+  {
+   "surface": "were",
+   "word": "were",
+   "lib": "WordDict.75k",
+   "addr": "6@27.7252",
+   "dom": "AUX",
+   "shell": 6,
+   "via": "exact",
+   "pos": 21
+  },
+  {
+   "surface": "markedly",
+   "word": "markedly",
+   "lib": "WordDict.75k",
+   "addr": "14@133.098",
+   "dom": "ADV",
+   "shell": 14,
+   "via": "exact",
+   "pos": 22
+  },
+  {
+   "surface": "elevated",
+   "word": "elevated",
+   "lib": "WordDict.75k",
+   "addr": "13@175.0935",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 23
+  },
+  {
+   "surface": "treatment",
+   "word": "treatment",
+   "lib": "SciMedDict",
+   "addr": "17@28.526",
+   "dom": "JARGON",
+   "shell": 17,
+   "via": "exact",
+   "pos": 24
+  },
+  {
+   "surface": "with",
+   "word": "with",
+   "lib": "WordDict.75k",
+   "addr": "4@233.0823",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 25
+  },
+  {
+   "surface": "aspirin",
+   "word": "aspirin",
+   "lib": "SciMedDict",
+   "addr": "8@90.109",
+   "dom": "NOUNM",
+   "shell": 8,
+   "via": "exact",
+   "pos": 26
+  },
+  {
+   "surface": "heparin",
+   "word": "heparin",
+   "lib": "SciMedDict",
+   "addr": "8@200.7933",
+   "dom": "NOUNM",
+   "shell": 8,
+   "via": "exact",
+   "pos": 27
+  },
+  {
+   "surface": "and",
+   "word": "and",
+   "lib": "WordDict.75k",
+   "addr": "5@190.0311",
+   "dom": "CONJ",
+   "shell": 5,
+   "via": "exact",
+   "pos": 28
+  },
+  {
+   "surface": "beta-blockers",
+   "word": "beta",
+   "lib": "WordDict.75k",
+   "addr": "13@338.7191",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "decomp",
+   "pos": 29
+  },
+  {
+   "surface": "beta-blockers",
+   "word": "blocker",
+   "lib": "WordDict.75k",
+   "addr": "7@127.8341",
+   "dom": "NOUNC",
+   "shell": 7,
+   "via": "decomp",
+   "pos": 29
+  },
+  {
+   "surface": "was",
+   "word": "was",
+   "lib": "WordDict.75k",
+   "addr": "6@250.2174",
+   "dom": "AUX",
+   "shell": 6,
+   "via": "exact",
+   "pos": 30
+  },
+  {
+   "surface": "initiated",
+   "word": "initiate",
+   "lib": "WordDict.75k",
+   "addr": "11@181.9025",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "lemma",
+   "pos": 31
+  },
+  {
+   "surface": "immediately",
+   "word": "immediately",
+   "lib": "WordDict.75k",
+   "addr": "14@151.615",
+   "dom": "ADV",
+   "shell": 14,
+   "via": "exact",
+   "pos": 32
+  },
+  {
+   "surface": "followed",
+   "word": "follow",
+   "lib": "WordDict.75k",
+   "addr": "11@300.303",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "lemma",
+   "pos": 33
+  },
+  {
+   "surface": "by",
+   "word": "by",
+   "lib": "WordDict.75k",
+   "addr": "4@197.6941",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 34
+  },
+  {
+   "surface": "percutaneous coronary intervention",
+   "word": "percutaneous_coronary_intervention",
+   "lib": "SciMedDict",
+   "addr": "17@20.9015",
+   "dom": "JARGON",
+   "shell": 17,
+   "via": "phrase",
+   "pos": 35
+  },
+  {
+   "surface": "photosynthesis",
+   "word": "photosynthesis",
+   "lib": "SciMedDict",
+   "addr": "9@222.7891",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "exact",
+   "pos": 38
+  },
+  {
+   "surface": "converts",
+   "word": "convert",
+   "lib": "WordDict.75k",
+   "addr": "11@267.2517",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "lemma",
+   "pos": 39
+  },
+  {
+   "surface": "carbon dioxide",
+   "word": "carbon_dioxide",
+   "lib": "SciMedDict",
+   "addr": "8@208.044",
+   "dom": "NOUNM",
+   "shell": 8,
+   "via": "phrase",
+   "pos": 40
+  },
+  {
+   "surface": "and",
+   "word": "and",
+   "lib": "WordDict.75k",
+   "addr": "5@190.0311",
+   "dom": "CONJ",
+   "shell": 5,
+   "via": "exact",
+   "pos": 42
+  },
+  {
+   "surface": "water",
+   "word": "water",
+   "lib": "SciMedDict",
+   "addr": "8@62.5652",
+   "dom": "NOUNM",
+   "shell": 8,
+   "via": "exact",
+   "pos": 43
+  },
+  {
+   "surface": "into",
+   "word": "into",
+   "lib": "WordDict.75k",
+   "addr": "4@322.8028",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 44
+  },
+  {
+   "surface": "glucose",
+   "word": "glucose",
+   "lib": "SciMedDict",
+   "addr": "8@293.9687",
+   "dom": "NOUNM",
+   "shell": 8,
+   "via": "exact",
+   "pos": 45
+  },
+  {
+   "surface": "using",
+   "word": "using",
+   "lib": "WordDict.75k",
+   "addr": "9@260.2502",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "exact",
+   "pos": 46
+  },
+  {
+   "surface": "light",
+   "word": "light",
+   "lib": "SciMedDict",
+   "addr": "9@346.492",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "exact",
+   "pos": 47
+  },
+  {
+   "surface": "energy",
+   "word": "energy",
+   "lib": "WordDict.75k",
+   "addr": "9@314.4726",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "exact",
+   "pos": 48
+  },
+  {
+   "surface": "captured",
+   "word": "capture",
+   "lib": "WordDict.75k",
+   "addr": "11@290.5047",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "lemma",
+   "pos": 49
+  },
+  {
+   "surface": "by",
+   "word": "by",
+   "lib": "WordDict.75k",
+   "addr": "4@197.6941",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 50
+  },
+  {
+   "surface": "chlorophyll",
+   "word": "chlorophyll",
+   "lib": "SciMedDict",
+   "addr": "8@70.4355",
+   "dom": "NOUNM",
+   "shell": 8,
+   "via": "exact",
+   "pos": 51
+  },
+  {
+   "surface": "in",
+   "word": "in",
+   "lib": "WordDict.75k",
+   "addr": "4@47.7873",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 52
+  },
+  {
+   "surface": "the",
+   "word": "the",
+   "lib": "WordDict.75k",
+   "addr": "2@27.7252",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 53
+  },
+  {
+   "surface": "chloroplasts",
+   "word": "chloroplasts",
+   "lib": "SciMedDict",
+   "addr": "7@296.5842",
+   "dom": "NOUNC",
+   "shell": 7,
+   "via": "exact",
+   "pos": 54
+  },
+  {
+   "surface": "of",
+   "word": "of",
+   "lib": "WordDict.75k",
+   "addr": "4@290.3416",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 55
+  },
+  {
+   "surface": "plant cells",
+   "word": "plant_cells",
+   "lib": "SciMedDict",
+   "addr": "7@300.5137",
+   "dom": "NOUNC",
+   "shell": 7,
+   "via": "phrase",
+   "pos": 56
+  },
+  {
+   "surface": "the",
+   "word": "the",
+   "lib": "WordDict.75k",
+   "addr": "2@27.7252",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 58
+  },
+  {
+   "surface": "process",
+   "word": "process",
+   "lib": "WordDict.75k",
+   "addr": "11@171.2116",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "exact",
+   "pos": 59
+  },
+  {
+   "surface": "releases",
+   "word": "release",
+   "lib": "WordDict.75k",
+   "addr": "11@182.2287",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "lemma",
+   "pos": 60
+  },
+  {
+   "surface": "oxygen",
+   "word": "oxygen",
+   "lib": "SciMedDict",
+   "addr": "8@272.7739",
+   "dom": "NOUNM",
+   "shell": 8,
+   "via": "exact",
+   "pos": 61
+  },
+  {
+   "surface": "as",
+   "word": "as",
+   "lib": "WordDict.75k",
+   "addr": "4@347.6009",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 62
+  },
+  {
+   "surface": "a",
+   "word": "a",
+   "lib": "WordDict.75k",
+   "addr": "2@0.0",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 63
+  },
+  {
+   "surface": "byproduct",
+   "word": "byproduct",
+   "lib": "WordDict.75k",
+   "addr": "9@341.1182",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "exact",
+   "pos": 64
+  },
+  {
+   "surface": "and",
+   "word": "and",
+   "lib": "WordDict.75k",
+   "addr": "5@190.0311",
+   "dom": "CONJ",
+   "shell": 5,
+   "via": "exact",
+   "pos": 65
+  },
+  {
+   "surface": "forms",
+   "word": "forms",
+   "lib": "SciMedDict",
+   "addr": "18@203.5481",
+   "dom": "META",
+   "shell": 18,
+   "via": "exact",
+   "pos": 66
+  },
+  {
+   "surface": "the",
+   "word": "the",
+   "lib": "WordDict.75k",
+   "addr": "2@27.7252",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 67
+  },
+  {
+   "surface": "foundation",
+   "word": "foundation",
+   "lib": "SciMedDict",
+   "addr": "17@348.5796",
+   "dom": "JARGON",
+   "shell": 17,
+   "via": "exact",
+   "pos": 68
+  },
+  {
+   "surface": "of",
+   "word": "of",
+   "lib": "WordDict.75k",
+   "addr": "4@290.3416",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 69
+  },
+  {
+   "surface": "most",
+   "word": "most",
+   "lib": "WordDict.75k",
+   "addr": "2@92.6475",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 70
+  },
+  {
+   "surface": "food chains",
+   "word": "food_chains",
+   "lib": "SciMedDict",
+   "addr": "9@226.2586",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "phrase",
+   "pos": 71
+  },
+  {
+   "surface": "researchers",
+   "word": "researchers",
+   "lib": "SciMedDict",
+   "addr": "7@237.2996",
+   "dom": "NOUNC",
+   "shell": 7,
+   "via": "exact",
+   "pos": 73
+  },
+  {
+   "surface": "trained",
+   "word": "trained",
+   "lib": "WordDict.75k",
+   "addr": "13@201.9499",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 74
+  },
+  {
+   "surface": "a",
+   "word": "a",
+   "lib": "WordDict.75k",
+   "addr": "2@0.0",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 75
+  },
+  {
+   "surface": "deep",
+   "word": "deep",
+   "lib": "WordDict.75k",
+   "addr": "13@197.9195",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 76
+  },
+  {
+   "surface": "neural network",
+   "word": "neural_network",
+   "lib": "WordDict.75k",
+   "addr": "9@88.8132",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "phrase",
+   "pos": 77
+  },
+  {
+   "surface": "on",
+   "word": "on",
+   "lib": "WordDict.75k",
+   "addr": "4@205.3571",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 79
+  },
+  {
+   "surface": "a",
+   "word": "a",
+   "lib": "WordDict.75k",
+   "addr": "2@0.0",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 80
+  },
+  {
+   "surface": "large",
+   "word": "large",
+   "lib": "WordDict.75k",
+   "addr": "13@44.3562",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 81
+  },
+  {
+   "surface": "corpus",
+   "word": "corpus",
+   "lib": "WordDict.75k",
+   "addr": "7@150.0937",
+   "dom": "NOUNC",
+   "shell": 7,
+   "via": "exact",
+   "pos": 82
+  },
+  {
+   "surface": "and",
+   "word": "and",
+   "lib": "WordDict.75k",
+   "addr": "5@190.0311",
+   "dom": "CONJ",
+   "shell": 5,
+   "via": "exact",
+   "pos": 83
+  },
+  {
+   "surface": "evaluated",
+   "word": "evaluate",
+   "lib": "WordDict.75k",
+   "addr": "12@226.9643",
+   "dom": "VERBS",
+   "shell": 12,
+   "via": "lemma",
+   "pos": 84
+  },
+  {
+   "surface": "its",
+   "word": "its",
+   "lib": "WordDict.75k",
+   "addr": "1@145.1708",
+   "dom": "PRON",
+   "shell": 1,
+   "via": "exact",
+   "pos": 85
+  },
+  {
+   "surface": "accuracy",
+   "word": "accuracy",
+   "lib": "WordDict.75k",
+   "addr": "9@263.7345",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "exact",
+   "pos": 86
+  },
+  {
+   "surface": "against",
+   "word": "against",
+   "lib": "WordDict.75k",
+   "addr": "4@327.5388",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 87
+  },
+  {
+   "surface": "several",
+   "word": "several",
+   "lib": "WordDict.75k",
+   "addr": "1@100.3106",
+   "dom": "PRON",
+   "shell": 1,
+   "via": "exact",
+   "pos": 88
+  },
+  {
+   "surface": "baselines",
+   "word": "baseline",
+   "lib": "WordDict.75k",
+   "addr": "9@253.0436",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "lemma",
+   "pos": 89
+  },
+  {
+   "surface": "the",
+   "word": "the",
+   "lib": "WordDict.75k",
+   "addr": "2@27.7252",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 90
+  },
+  {
+   "surface": "model",
+   "word": "model",
+   "lib": "WordDict.75k",
+   "addr": "11@240.0159",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "exact",
+   "pos": 91
+  },
+  {
+   "surface": "generalized",
+   "word": "generalized",
+   "lib": "WordDict.75k",
+   "addr": "13@270.1402",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 92
+  },
+  {
+   "surface": "well",
+   "word": "well",
+   "lib": "WordDict.75k",
+   "addr": "11@47.2832",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "exact",
+   "pos": 93
+  },
+  {
+   "surface": "although",
+   "word": "although",
+   "lib": "WordDict.75k",
+   "addr": "5@52.5233",
+   "dom": "CONJ",
+   "shell": 5,
+   "via": "exact",
+   "pos": 94
+  },
+  {
+   "surface": "the",
+   "word": "the",
+   "lib": "WordDict.75k",
+   "addr": "2@27.7252",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 95
+  },
+  {
+   "surface": "authors",
+   "word": "author",
+   "lib": "WordDict.75k",
+   "addr": "11@204.6662",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "lemma",
+   "pos": 96
+  },
+  {
+   "surface": "noted",
+   "word": "noted",
+   "lib": "WordDict.75k",
+   "addr": "13@305.0628",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 97
+  },
+  {
+   "surface": "that",
+   "word": "that",
+   "lib": "WordDict.75k",
+   "addr": "1@342.8649",
+   "dom": "PRON",
+   "shell": 1,
+   "via": "exact",
+   "pos": 98
+  },
+  {
+   "surface": "the",
+   "word": "the",
+   "lib": "WordDict.75k",
+   "addr": "2@27.7252",
+   "dom": "DET",
+   "shell": 2,
+   "via": "exact",
+   "pos": 99
+  },
+  {
+   "surface": "algorithm",
+   "word": "algorithm",
+   "lib": "SciMedDict",
+   "addr": "9@68.0125",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "exact",
+   "pos": 100
+  },
+  {
+   "surface": "remained",
+   "word": "remain",
+   "lib": "WordDict.75k",
+   "addr": "11@202.2908",
+   "dom": "VERBA",
+   "shell": 11,
+   "via": "lemma",
+   "pos": 101
+  },
+  {
+   "surface": "sensitive",
+   "word": "sensitive",
+   "lib": "WordDict.75k",
+   "addr": "13@288.4171",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 102
+  },
+  {
+   "surface": "to",
+   "word": "to",
+   "lib": "WordDict.75k",
+   "addr": "4@22.9891",
+   "dom": "PREP",
+   "shell": 4,
+   "via": "exact",
+   "pos": 103
+  },
+  {
+   "surface": "noisy",
+   "word": "noisy",
+   "lib": "WordDict.75k",
+   "addr": "13@191.2352",
+   "dom": "ADJ",
+   "shell": 13,
+   "via": "exact",
+   "pos": 104
+  },
+  {
+   "surface": "gradients",
+   "word": "gradient",
+   "lib": "WordDict.75k",
+   "addr": "9@356.0411",
+   "dom": "NOUNA",
+   "shell": 9,
+   "via": "lemma",
+   "pos": 105
+  }
+ ],
+ "concept_index": {
+  "the": {
+   "addr": "2@27.7252",
+   "dom": "DET",
+   "lib": "WordDict.75k",
+   "count": 7
+  },
+  "patient": {
+   "addr": "7@298.5416",
+   "dom": "NOUNC",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "present": {
+   "addr": "12@84.4566",
+   "dom": "VERBS",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "with": {
+   "addr": "4@233.0823",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 2
+  },
+  "severe": {
+   "addr": "13@129.0382",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "chest_pain": {
+   "addr": "9@332.8265",
+   "dom": "NOUNA",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "and": {
+   "addr": "5@190.0311",
+   "dom": "CONJ",
+   "lib": "WordDict.75k",
+   "count": 6
+  },
+  "shortness_of_breath": {
+   "addr": "9@165.9183",
+   "dom": "NOUNA",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "an": {
+   "addr": "2@275.0155",
+   "dom": "DET",
+   "lib": "WordDict.75k",
+   "count": 2
+  },
+  "electrocardiogram": {
+   "addr": "17@213.4087",
+   "dom": "JARGON",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "reveal": {
+   "addr": "12@138.0979",
+   "dom": "VERBS",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "acute": {
+   "addr": "13@126.2267",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "myocardial_infarction": {
+   "addr": "9@305.7391",
+   "dom": "NOUNA",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "troponin": {
+   "addr": "8@283.3492",
+   "dom": "NOUNM",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "level": {
+   "addr": "11@247.2519",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "were": {
+   "addr": "6@27.7252",
+   "dom": "AUX",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "markedly": {
+   "addr": "14@133.098",
+   "dom": "ADV",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "elevated": {
+   "addr": "13@175.0935",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "treatment": {
+   "addr": "17@28.526",
+   "dom": "JARGON",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "aspirin": {
+   "addr": "8@90.109",
+   "dom": "NOUNM",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "heparin": {
+   "addr": "8@200.7933",
+   "dom": "NOUNM",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "beta": {
+   "addr": "13@338.7191",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "blocker": {
+   "addr": "7@127.8341",
+   "dom": "NOUNC",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "was": {
+   "addr": "6@250.2174",
+   "dom": "AUX",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "initiate": {
+   "addr": "11@181.9025",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "immediately": {
+   "addr": "14@151.615",
+   "dom": "ADV",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "follow": {
+   "addr": "11@300.303",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "by": {
+   "addr": "4@197.6941",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 2
+  },
+  "percutaneous_coronary_intervention": {
+   "addr": "17@20.9015",
+   "dom": "JARGON",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "photosynthesis": {
+   "addr": "9@222.7891",
+   "dom": "NOUNA",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "convert": {
+   "addr": "11@267.2517",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "carbon_dioxide": {
+   "addr": "8@208.044",
+   "dom": "NOUNM",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "water": {
+   "addr": "8@62.5652",
+   "dom": "NOUNM",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "into": {
+   "addr": "4@322.8028",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "glucose": {
+   "addr": "8@293.9687",
+   "dom": "NOUNM",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "using": {
+   "addr": "9@260.2502",
+   "dom": "NOUNA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "light": {
+   "addr": "9@346.492",
+   "dom": "NOUNA",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "energy": {
+   "addr": "9@314.4726",
+   "dom": "NOUNA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "capture": {
+   "addr": "11@290.5047",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "chlorophyll": {
+   "addr": "8@70.4355",
+   "dom": "NOUNM",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "in": {
+   "addr": "4@47.7873",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "chloroplasts": {
+   "addr": "7@296.5842",
+   "dom": "NOUNC",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "of": {
+   "addr": "4@290.3416",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 2
+  },
+  "plant_cells": {
+   "addr": "7@300.5137",
+   "dom": "NOUNC",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "process": {
+   "addr": "11@171.2116",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "release": {
+   "addr": "11@182.2287",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "oxygen": {
+   "addr": "8@272.7739",
+   "dom": "NOUNM",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "as": {
+   "addr": "4@347.6009",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "a": {
+   "addr": "2@0.0",
+   "dom": "DET",
+   "lib": "WordDict.75k",
+   "count": 3
+  },
+  "byproduct": {
+   "addr": "9@341.1182",
+   "dom": "NOUNA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "forms": {
+   "addr": "18@203.5481",
+   "dom": "META",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "foundation": {
+   "addr": "17@348.5796",
+   "dom": "JARGON",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "most": {
+   "addr": "2@92.6475",
+   "dom": "DET",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "food_chains": {
+   "addr": "9@226.2586",
+   "dom": "NOUNA",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "researchers": {
+   "addr": "7@237.2996",
+   "dom": "NOUNC",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "trained": {
+   "addr": "13@201.9499",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "deep": {
+   "addr": "13@197.9195",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "neural_network": {
+   "addr": "9@88.8132",
+   "dom": "NOUNA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "on": {
+   "addr": "4@205.3571",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "large": {
+   "addr": "13@44.3562",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "corpus": {
+   "addr": "7@150.0937",
+   "dom": "NOUNC",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "evaluate": {
+   "addr": "12@226.9643",
+   "dom": "VERBS",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "its": {
+   "addr": "1@145.1708",
+   "dom": "PRON",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "accuracy": {
+   "addr": "9@263.7345",
+   "dom": "NOUNA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "against": {
+   "addr": "4@327.5388",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "several": {
+   "addr": "1@100.3106",
+   "dom": "PRON",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "baseline": {
+   "addr": "9@253.0436",
+   "dom": "NOUNA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "model": {
+   "addr": "11@240.0159",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "generalized": {
+   "addr": "13@270.1402",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "well": {
+   "addr": "11@47.2832",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "although": {
+   "addr": "5@52.5233",
+   "dom": "CONJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "author": {
+   "addr": "11@204.6662",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "noted": {
+   "addr": "13@305.0628",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "that": {
+   "addr": "1@342.8649",
+   "dom": "PRON",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "algorithm": {
+   "addr": "9@68.0125",
+   "dom": "NOUNA",
+   "lib": "SciMedDict",
+   "count": 1
+  },
+  "remain": {
+   "addr": "11@202.2908",
+   "dom": "VERBA",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "sensitive": {
+   "addr": "13@288.4171",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "to": {
+   "addr": "4@22.9891",
+   "dom": "PREP",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "noisy": {
+   "addr": "13@191.2352",
+   "dom": "ADJ",
+   "lib": "WordDict.75k",
+   "count": 1
+  },
+  "gradient": {
+   "addr": "9@356.0411",
+   "dom": "NOUNA",
+   "lib": "WordDict.75k",
+   "count": 1
+  }
+ },
+ "ptr_graph": {
+  "WordDict.75k:4@205.3571": [
+   "4@327.5388"
+  ],
+  "WordDict.75k:4@47.7873": [
+   "4@197.6941",
+   "4@322.8028"
+  ],
+  "WordDict.75k:4@290.3416": [
+   "4@205.3571"
+  ],
+  "WordDict.75k:4@233.0823": [
+   "4@197.6941"
+  ],
+  "WordDict.75k:4@197.6941": [
+   "4@47.7873"
+  ],
+  "WordDict.75k:4@22.9891": [
+   "4@205.3571",
+   "4@322.8028",
+   "4@327.5388",
+   "4@47.7873"
+  ],
+  "WordDict.75k:4@327.5388": [
+   "4@205.3571",
+   "4@22.9891"
+  ]
+ },
+ "oov_top": []
+}
