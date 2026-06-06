@@ -27,16 +27,28 @@ from collections import Counter, defaultdict
 # function-word domains — resolved, but excluded from "content coverage"
 FUNCTION_DOMS = {"PRON", "DET", "PREP", "CONJ", "AUX", "NUM", "INTERJ"}
 
+# Citation / bibliographic / markup tokens that pollute web & PDF extractions.
+# These resolve to dictionary entries but carry no document meaning, so they are
+# dropped before resolution (kept tight to avoid removing real words like
+# 'table'/'figure'/'no'). Toggle with Encoder(strip_citations=...).
+CITATION_NOISE = {
+    "doi", "isbn", "issn", "pmid", "pmc", "pmcid", "s2cid", "bibcode", "arxiv",
+    "jstor", "oclc", "lccn", "ol", "vol", "pp", "ed", "eds", "et", "al", "ibid",
+    "op", "cit", "retrieved", "archived", "wayback", "permalink", "url", "urls",
+    "http", "https", "www", "isbn-13", "isbn-10",
+}
+
 _TOKEN_RE = re.compile(r"[a-z0-9]+(?:[-'][a-z0-9]+)*")
 
 
 class Encoder:
     def __init__(self, index, use_lemma=True, use_multiword=True,
-                 use_decompose=True, lib_priority=None):
+                 use_decompose=True, strip_citations=True, lib_priority=None):
         self.ix = index
         self.use_lemma = use_lemma
         self.use_multiword = use_multiword
         self.use_decompose = use_decompose
+        self.strip_citations = strip_citations
         # which library wins when a term exists in several (e.g. SciMed first)
         self.lib_priority = lib_priority or list(index.libs)
         self._lemmatizer = None
@@ -105,6 +117,9 @@ class Encoder:
         i = 0
         while i < n:
             tok = tokens[i]
+            if self.strip_citations and tok in CITATION_NOISE:
+                i += 1
+                continue
             entry = None
             via = None
             span = 1

@@ -121,3 +121,72 @@ The OOV report surfaces exactly what the dictionaries don't cover:
   (`can`, `will`, `lead`) using sentence context.
 * Extraction-side citation/reference stripping for cleaner web encodings.
 * Sentence/section structure preservation (currently a flat token stream).
+
+---
+
+# Coupling maps from snippets (`snippets_to_xmap.py`)
+
+The keyword converter above resolves *individual words*. This tool resolves
+*snippets* (whole documents, or sections/paragraphs of one) and emits a
+**WPE-5 cross-coupling map** — schema `wpe-5.0-xmap-1.0`, structurally identical
+to the PanWorld example — describing how the snippets couple to each other.
+
+## How a snippet becomes a PART
+
+Each snippet is resolved against the dictionaries (reusing `encode.Encoder`),
+then placed in WPE phase space:
+
+| Field | Derivation |
+|-------|------------|
+| `domain_codes` | the lexicon domains the snippet resolves into (by frequency) |
+| `shell` | `min(shell of domain_codes)` — satisfies the schema invariant |
+| `theta` | frequency-weighted **circular mean** of its descriptors' θ |
+| `kappa` | `-(1 + 3·concentration)` — more topically focused ⇒ deeper/stabler well |
+| `addr` | `"<shell>@<theta>"`, made unique per part |
+| `key_subsystems` | the snippet's top resolved concepts |
+
+## How parts couple
+
+Each part becomes a **TF-IDF concept vector** over the descriptor addresses it
+resolved, **expanded along the dictionaries' own `ptr`/`ptr_orthogonal` edges**
+so snippets about *related* concepts couple even without identical wording.
+Then for every pair:
+
+```
+c           = cosine(vec_i, vec_j)         # semantic phase alignment  [-1,1]
+delta_theta = degrees(arccos(c))           # so c == cos(delta_theta)
+tier        = tier_from_c(c)               # SYNERGISTIC … OPPOSITION
+```
+
+Per-part pointers follow the schema's tier thresholds:
+`ptr_coupling`/`ptr_sequence` (c ≥ 0.34, sequence = directed to later parts),
+`ptr_orthogonal` (−0.09 ≤ c < 0.34), `ptr_opposition` (c < −0.09).
+
+The full map also emits `coupling_matrix` (symmetric N×N), `cross_coupling_index`
+(interface-level detail with `key_bridges` = the concepts two snippets share),
+`shell_hierarchy`, `phase_resonance_bands`, the 16 `consistency_invariants`, and
+`lookup_paths` — all in the exact PanWorld layout.
+
+## Usage
+
+```bash
+# each source = one part
+python convert/snippets_to_xmap.py a.pdf b.html https://example.com/x --out map.json
+
+# one document, split into coupled sections
+python convert/snippets_to_xmap.py article.html --split sections --min-chars 1500 --out map.json
+
+# gate it — checks all 16 wpe-5.0-xmap-1.0 invariants
+python convert/validate_xmap.py map.json
+```
+
+## Validated behaviour
+
+* 4 unrelated documents → all WEAK couplings (clinical↔ML lowest 0.09); correct.
+* 1 article split into 50 sections → 1,225 pairs, MODERATE/REINFORCING couplings
+  between related sections (e.g. two symptom sections at c≈0.38); 4 detail records.
+* Both pass `validate_xmap.py` (all 16 invariants).
+
+`strip_citations=True` (default) drops bibliographic tokens (doi/isbn/pmid/et al)
+so couplings reflect content, not reference-list cruft. Feeding clean body prose
+(rather than a reference-heavy page) yields the cleanest coupling maps.
