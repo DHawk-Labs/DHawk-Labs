@@ -66,9 +66,15 @@ COUPLING_TIERS = {
 }
 
 
+def angular_sep(a, b):
+    """Phase separation of two angles in degrees, folded to [0, 180]."""
+    d = abs(a - b) % 360.0
+    return round(d if d <= 180.0 else 360.0 - d, 1)
+
+
 def tier_from_c(c):
-    if c >= 0.9999:
-        return "SELF"
+    # 'SELF' is positional (the matrix diagonal), never returned by tier-from-c:
+    # two distinct parts may legitimately share a phase and be SYNERGISTIC.
     if c >= 0.87:
         return "SYNERGISTIC"
     if c >= 0.61:
@@ -219,15 +225,21 @@ def _assign_addresses(parts):
         used.add(p["addr"])
 
 
-def build_xmap(ix, encoded, source_count, library):
-    """encoded = [(part_dict, tf_counter), ...] in input order."""
+def build_xmap(ix, encoded, source_count, library, coupling="geometric"):
+    """encoded = [(part_dict, tf_counter), ...] in input order.
+
+    coupling = 'geometric' : c = cos(Δ master-θ)  (pure WPE phase model)
+               'semantic'  : c = cosine of ptr-expanded TF-IDF concept vectors,
+                             with Δθ := arccos(c)
+    """
     parts = [e[0] for e in encoded]
-    vectors = apply_idf([expand_vector(ix, e[1]) for e in encoded])
     ids = [f"P{i}" for i in range(1, len(parts) + 1)]
     for pid, p in zip(ids, parts):
         p["id"] = pid
     _assign_addresses(parts)
     addr_of = {pid: p["addr"] for pid, p in zip(ids, parts)}
+    vectors = (apply_idf([expand_vector(ix, e[1]) for e in encoded])
+               if coupling == "semantic" else None)
 
     # ---- symmetric coupling matrix ----
     n = len(parts)
@@ -237,8 +249,12 @@ def build_xmap(ix, encoded, source_count, library):
             if a == b:
                 cmat[ids[a]][ids[b]] = {"c": 1.0, "delta_theta": 0.0, "tier": "SELF"}
                 continue
-            c = round(max(-1.0, min(1.0, cosine(vectors[a], vectors[b]))), 4)
-            dt = round(math.degrees(math.acos(max(-1.0, min(1.0, c)))), 1)
+            if coupling == "geometric":
+                dt = angular_sep(parts[a]["theta"], parts[b]["theta"])
+                c = round(math.cos(math.radians(dt)), 4)
+            else:
+                c = round(max(-1.0, min(1.0, cosine(vectors[a], vectors[b]))), 4)
+                dt = round(math.degrees(math.acos(max(-1.0, min(1.0, c)))), 1)
             cmat[ids[a]][ids[b]] = {"c": c, "delta_theta": dt, "tier": tier_from_c(c)}
 
     # ---- per-part pointers from tiers ----
@@ -547,6 +563,10 @@ def main(argv=None):
                     help="minimum characters per section when --split sections")
     ap.add_argument("--lex", nargs="+", default=["libs/scimed_dict_lib.json", "libs/word_dict_75k_lib.json"])
     ap.add_argument("--library", default="ProseWorld.XMap")
+    ap.add_argument("--coupling", default="geometric",
+                    choices=["geometric", "semantic"],
+                    help="geometric = c=cos(Δ master-θ) [WPE default]; "
+                         "semantic = concept-vector cosine")
     ap.add_argument("--out", default="xmap.json")
     args = ap.parse_args(argv)
 
@@ -573,7 +593,8 @@ def main(argv=None):
     if len(encoded) < 2:
         print("need >= 2 snippets to build a coupling map (use --split)", file=sys.stderr)
         return
-    xmap = build_xmap(ix, encoded, source_count=len(args.sources), library=args.library)
+    xmap = build_xmap(ix, encoded, source_count=len(args.sources),
+                      library=args.library, coupling=args.coupling)
     with open(args.out, "w", encoding="utf-8") as fh:
         json.dump(xmap, fh, ensure_ascii=False, indent=2)
     print(f"\nparts={xmap['unique_part_count']} pairs={xmap['coupling_pairs_total']} "

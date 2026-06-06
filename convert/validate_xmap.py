@@ -22,8 +22,8 @@ TOL = 0.02
 
 
 def tier_from_c(c):
-    if c >= 0.9999:
-        return "SELF"
+    # SELF is positional (matrix diagonal only); distinct parts at the same
+    # phase are SYNERGISTIC, not SELF.
     if c >= 0.87:
         return "SYNERGISTIC"
     if c >= 0.61:
@@ -118,8 +118,9 @@ def validate(path):
             cji = cm.get(j, {}).get(i, {}).get("c")
             if cji is not None and abs(cell["c"] - cji) > 1e-6:
                 err("CM_ASYM", f"[{i}][{j}].c={cell['c']} != [{j}][{i}].c={cji}")
-            if cell.get("tier") != tier_from_c(cell["c"]):
-                err("TIER", f"[{i}][{j}] tier {cell.get('tier')} != {tier_from_c(cell['c'])}")
+            expect = "SELF" if i == j else tier_from_c(cell["c"])
+            if cell.get("tier") != expect:
+                err("TIER", f"[{i}][{j}] tier {cell.get('tier')} != {expect}")
             # c == cos(delta_theta)
             dt = cell.get("delta_theta")
             if dt is not None and abs(cell["c"] - math.cos(math.radians(dt))) > TOL:

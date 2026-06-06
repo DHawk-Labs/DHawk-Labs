@@ -147,16 +147,20 @@ then placed in WPE phase space:
 
 ## How parts couple
 
-Each part becomes a **TF-IDF concept vector** over the descriptor addresses it
-resolved, **expanded along the dictionaries' own `ptr`/`ptr_orthogonal` edges**
-so snippets about *related* concepts couple even without identical wording.
-Then for every pair:
+Coupling is **geometric by default** — the pure WPE phase model. Each pair's
+coupling is the cosine of the phase separation between the two parts' master
+output nodes:
 
 ```
-c           = cosine(vec_i, vec_j)         # semantic phase alignment  [-1,1]
-delta_theta = degrees(arccos(c))           # so c == cos(delta_theta)
-tier        = tier_from_c(c)               # SYNERGISTIC … OPPOSITION
+delta_theta = angular_sep(theta_i, theta_j)   # |θi−θj| folded to [0,180]
+c           = cos(delta_theta)                # [-1,1]
+tier        = tier_from_c(c)                   # SYNERGISTIC … OPPOSITION
 ```
+
+Anti-phase snippets (Δθ→180°) reach OPPOSITION, aligned ones (Δθ→0°) reach
+SYNERGISTIC. `--coupling semantic` is an alternative that derives `c` from the
+cosine of ptr-expanded TF-IDF concept vectors (content overlap), with
+`delta_theta := arccos(c)`; both modes satisfy `c == cos(delta_theta)`.
 
 Per-part pointers follow the schema's tier thresholds:
 `ptr_coupling`/`ptr_sequence` (c ≥ 0.34, sequence = directed to later parts),
@@ -180,11 +184,12 @@ python convert/snippets_to_xmap.py article.html --split sections --min-chars 150
 python convert/validate_xmap.py map.json
 ```
 
-## Validated behaviour
+## Validated behaviour (geometric coupling)
 
-* 4 unrelated documents → all WEAK couplings (clinical↔ML lowest 0.09); correct.
-* 1 article split into 50 sections → 1,225 pairs, MODERATE/REINFORCING couplings
-  between related sections (e.g. two symptom sections at c≈0.38); 4 detail records.
+* 4 documents → full tier spread: SYNERGISTIC (Δθ=21.7°, c=0.93),
+  REINFORCING, WEAK, ORTHOGONAL (Δθ≈90°), and OPPOSITION (Δθ=143°, c=−0.80).
+* 1 article split into 50 sections → 1,225 pairs across all six tiers; 40 detail
+  records.
 * Both pass `validate_xmap.py` (all 16 invariants).
 
 `strip_citations=True` (default) drops bibliographic tokens (doi/isbn/pmid/et al)

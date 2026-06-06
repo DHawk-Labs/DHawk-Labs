@@ -9,7 +9,7 @@
   "source_file_count": 4,
   "unique_part_count": 4,
   "coupling_pairs_total": 6,
-  "coupling_pairs_with_detail": 0,
+  "coupling_pairs_with_detail": 2,
   "domain_count": 10,
   "top_level_fields": {
     "library": "string — library name",
@@ -264,19 +264,21 @@
         "electrocardiogram"
       ],
       "wpe_output": "NOUNA:7@240.2|-1.7:'the_patient_presented_with_severe_chest_pain_and_master'",
-      "ptr_sequence": [],
+      "ptr_sequence": [
+        "7@189.4"
+      ],
       "ptr_coupling": [],
       "ptr_orthogonal": [
-        "7@181.1",
-        "7@105.1",
-        "7@168.4"
+        "7@167.7"
       ],
-      "ptr_opposition": [],
+      "ptr_opposition": [
+        "7@96.8"
+      ],
       "semantic_role": "snippet_layer — 'The patient presented with severe chest pain and' dominated by domains [NOUNA, ADJ, VERBA]",
       "curation": {
-        "coupling_strength": "weak",
-        "orthogonal_status": "filled",
-        "oppositional_status": "not_applicable",
+        "coupling_strength": "partial",
+        "orthogonal_status": "partial",
+        "oppositional_status": "filled",
         "needs_curation": false,
         "auto_sources": [
           "wpe-5.0-xmap",
@@ -287,12 +289,12 @@
     },
     "P2": {
       "id": "P2",
-      "addr": "7@181.1",
+      "addr": "7@189.4",
       "label": "Photosynthesis - Wikipedia",
       "filename": "/tmp/photosynthesis.html",
       "shell": 7,
-      "theta": 181.1,
-      "kappa": -1.7,
+      "theta": 189.4,
+      "kappa": -1.72,
       "dom": "NOUNA",
       "domain_codes": [
         "NOUNA",
@@ -302,8 +304,8 @@
         "NOUNM",
         "NOUNP",
         "VERBS",
-        "JARGON",
         "ADV",
+        "JARGON",
         "META"
       ],
       "wpe_built_ins_used": [],
@@ -312,55 +314,57 @@
         "max": 13
       },
       "section_count": 1,
-      "component_count_approx": 8679,
+      "component_count_approx": 8526,
       "key_subsystems": [
         "photosynthesis",
         "light",
-        "doi",
         "reaction",
         "photosynthetic",
-        "plants"
+        "plants",
+        "carbon"
       ],
-      "wpe_output": "NOUNA:7@181.1|-1.7:'photosynthesis_wikipedia_master'",
-      "ptr_sequence": [],
-      "ptr_coupling": [],
+      "wpe_output": "NOUNA:7@189.4|-1.72:'photosynthesis_wikipedia_master'",
+      "ptr_sequence": [
+        "7@167.7"
+      ],
+      "ptr_coupling": [
+        "7@240.2"
+      ],
       "ptr_orthogonal": [
-        "7@240.2",
-        "7@105.1",
-        "7@168.4"
+        "7@96.8"
       ],
       "ptr_opposition": [],
       "semantic_role": "snippet_layer — 'Photosynthesis - Wikipedia' dominated by domains [NOUNA, ADJ, VERBA]",
       "curation": {
-        "coupling_strength": "weak",
-        "orthogonal_status": "filled",
+        "coupling_strength": "central",
+        "orthogonal_status": "partial",
         "oppositional_status": "not_applicable",
-        "needs_curation": true,
+        "needs_curation": false,
         "auto_sources": [
           "wpe-5.0-xmap",
           "lexicon-extraction"
         ],
-        "sufficiency_score": 0.88
+        "sufficiency_score": 0.9
       }
     },
     "P3": {
       "id": "P3",
-      "addr": "7@105.1",
+      "addr": "7@96.8",
       "label": "Myocardial infarction - Wikipedia",
       "filename": "/tmp/mi.html",
       "shell": 7,
-      "theta": 105.1,
-      "kappa": -1.75,
+      "theta": 96.8,
+      "kappa": -1.78,
       "dom": "NOUNA",
       "domain_codes": [
         "NOUNA",
         "ADJ",
         "VERBA",
-        "NOUNP",
         "JARGON",
+        "NOUNP",
         "NOUNC",
-        "ADV",
         "VERBS",
+        "ADV",
         "NOUNM",
         "META"
       ],
@@ -370,45 +374,46 @@
         "max": 17
       },
       "section_count": 1,
-      "component_count_approx": 9406,
+      "component_count_approx": 9172,
       "key_subsystems": [
         "myocardial_infarction",
-        "doi",
         "heart",
         "risk",
-        "et_al",
-        "mi"
+        "mi",
+        "acute",
+        "journal"
       ],
-      "wpe_output": "NOUNA:7@105.1|-1.75:'myocardial_infarction_wikipedia_master'",
+      "wpe_output": "NOUNA:7@96.8|-1.78:'myocardial_infarction_wikipedia_master'",
       "ptr_sequence": [],
       "ptr_coupling": [],
       "ptr_orthogonal": [
-        "7@181.1",
-        "7@240.2",
-        "7@168.4"
+        "7@167.7",
+        "7@189.4"
       ],
-      "ptr_opposition": [],
+      "ptr_opposition": [
+        "7@240.2"
+      ],
       "semantic_role": "snippet_layer — 'Myocardial infarction - Wikipedia' dominated by domains [NOUNA, ADJ, VERBA]",
       "curation": {
         "coupling_strength": "weak",
-        "orthogonal_status": "filled",
-        "oppositional_status": "not_applicable",
-        "needs_curation": true,
+        "orthogonal_status": "partial",
+        "oppositional_status": "filled",
+        "needs_curation": false,
         "auto_sources": [
           "wpe-5.0-xmap",
           "lexicon-extraction"
         ],
-        "sufficiency_score": 0.88
+        "sufficiency_score": 0.9
       }
     },
     "P4": {
       "id": "P4",
-      "addr": "7@168.4",
+      "addr": "7@167.7",
       "label": "Provided proper attribution is provided, Google hereby grant",
       "filename": "/tmp/attention.pdf",
       "shell": 7,
-      "theta": 168.4,
-      "kappa": -1.8,
+      "theta": 167.7,
+      "kappa": -1.81,
       "dom": "VERBA",
       "domain_codes": [
         "VERBA",
@@ -428,7 +433,7 @@
         "max": 12
       },
       "section_count": 15,
-      "component_count_approx": 4907,
+      "component_count_approx": 4896,
       "key_subsystems": [
         "attention",
         "model",
@@ -437,26 +442,27 @@
         "position",
         "input"
       ],
-      "wpe_output": "VERBA:7@168.4|-1.8:'provided_proper_attribution_is_provided_google_h_master'",
+      "wpe_output": "VERBA:7@167.7|-1.81:'provided_proper_attribution_is_provided_google_h_master'",
       "ptr_sequence": [],
-      "ptr_coupling": [],
+      "ptr_coupling": [
+        "7@189.4"
+      ],
       "ptr_orthogonal": [
-        "7@181.1",
-        "7@105.1",
+        "7@96.8",
         "7@240.2"
       ],
       "ptr_opposition": [],
       "semantic_role": "snippet_layer — 'Provided proper attribution is provided, Google ' dominated by domains [VERBA, NOUNA, ADJ]",
       "curation": {
-        "coupling_strength": "weak",
-        "orthogonal_status": "filled",
+        "coupling_strength": "partial",
+        "orthogonal_status": "partial",
         "oppositional_status": "not_applicable",
-        "needs_curation": true,
+        "needs_curation": false,
         "auto_sources": [
           "wpe-5.0-xmap",
           "lexicon-extraction"
         ],
-        "sufficiency_score": 0.89
+        "sufficiency_score": 0.9
       }
     }
   },
@@ -480,26 +486,26 @@
           "tier": "SELF"
         },
         "P2": {
-          "c": 0.245,
-          "delta_theta": 75.8,
-          "tier": "WEAK"
+          "c": 0.632,
+          "delta_theta": 50.8,
+          "tier": "REINFORCING"
         },
         "P3": {
-          "c": 0.1966,
-          "delta_theta": 78.7,
-          "tier": "WEAK"
+          "c": -0.8028,
+          "delta_theta": 143.4,
+          "tier": "OPPOSITION"
         },
         "P4": {
-          "c": 0.0904,
-          "delta_theta": 84.8,
+          "c": 0.3007,
+          "delta_theta": 72.5,
           "tier": "WEAK"
         }
       },
       "P2": {
         "P1": {
-          "c": 0.245,
-          "delta_theta": 75.8,
-          "tier": "WEAK"
+          "c": 0.632,
+          "delta_theta": 50.8,
+          "tier": "REINFORCING"
         },
         "P2": {
           "c": 1.0,
@@ -507,26 +513,26 @@
           "tier": "SELF"
         },
         "P3": {
-          "c": 0.2237,
-          "delta_theta": 77.1,
-          "tier": "WEAK"
+          "c": -0.0454,
+          "delta_theta": 92.6,
+          "tier": "ORTHOGONAL"
         },
         "P4": {
-          "c": 0.1469,
-          "delta_theta": 81.6,
-          "tier": "WEAK"
+          "c": 0.9291,
+          "delta_theta": 21.7,
+          "tier": "SYNERGISTIC"
         }
       },
       "P3": {
         "P1": {
-          "c": 0.1966,
-          "delta_theta": 78.7,
-          "tier": "WEAK"
+          "c": -0.8028,
+          "delta_theta": 143.4,
+          "tier": "OPPOSITION"
         },
         "P2": {
-          "c": 0.2237,
-          "delta_theta": 77.1,
-          "tier": "WEAK"
+          "c": -0.0454,
+          "delta_theta": 92.6,
+          "tier": "ORTHOGONAL"
         },
         "P3": {
           "c": 1.0,
@@ -534,25 +540,25 @@
           "tier": "SELF"
         },
         "P4": {
-          "c": 0.1185,
-          "delta_theta": 83.2,
+          "c": 0.3272,
+          "delta_theta": 70.9,
           "tier": "WEAK"
         }
       },
       "P4": {
         "P1": {
-          "c": 0.0904,
-          "delta_theta": 84.8,
+          "c": 0.3007,
+          "delta_theta": 72.5,
           "tier": "WEAK"
         },
         "P2": {
-          "c": 0.1469,
-          "delta_theta": 81.6,
-          "tier": "WEAK"
+          "c": 0.9291,
+          "delta_theta": 21.7,
+          "tier": "SYNERGISTIC"
         },
         "P3": {
-          "c": 0.1185,
-          "delta_theta": 83.2,
+          "c": 0.3272,
+          "delta_theta": 70.9,
           "tier": "WEAK"
         },
         "P4": {
@@ -563,7 +569,98 @@
       }
     }
   },
-  "cross_coupling_index": [],
+  "cross_coupling_index": [
+    {
+      "id": "XC.P2.P4.photosynthesis_attention",
+      "source_part": "P2",
+      "target_part": "P4",
+      "operator": "coupling",
+      "source_addr": "7@189.4",
+      "target_addr": "7@167.7",
+      "delta_theta_part_level": 21.7,
+      "coupling_strength_part_level": 0.9291,
+      "tier": "SYNERGISTIC",
+      "direction": "bidirectional",
+      "source_interface": {
+        "component": "P2.photosynthesis",
+        "dom": "NOUNA",
+        "shell": 7,
+        "theta": 189.4,
+        "kappa": -1.72,
+        "wpe": "NOUNA:7@189.4|-1.72"
+      },
+      "target_interface": {
+        "component": "P4.attention",
+        "dom": "VERBA",
+        "shell": 7,
+        "theta": 167.7,
+        "kappa": -1.81,
+        "wpe": "VERBA:7@167.7|-1.81"
+      },
+      "interface_delta_theta": 21.7,
+      "interface_coupling_strength": 0.9291,
+      "shell_influence": {
+        "formula": "I(λ_h,λ_l)=1/λ_l−1/λ_h",
+        "lambda_high": 7,
+        "lambda_low": 7,
+        "value": 0.0,
+        "note": "same shell — no gradient"
+      },
+      "semantic_label": "photosynthesis_couples_attention",
+      "key_bridges": [
+        "P2:photosynthesis -> P4:attention",
+        "P2:light -> P4:model",
+        "P2:reaction -> P4:layer",
+        "P2:photosynthetic -> P4:sequence"
+      ],
+      "wpe_notation": "$P2.photosynthesis coupling $P4.attention"
+    },
+    {
+      "id": "XC.P1.P2.patient_photosynthesis",
+      "source_part": "P1",
+      "target_part": "P2",
+      "operator": "coupling",
+      "source_addr": "7@240.2",
+      "target_addr": "7@189.4",
+      "delta_theta_part_level": 50.8,
+      "coupling_strength_part_level": 0.632,
+      "tier": "REINFORCING",
+      "direction": "bidirectional",
+      "source_interface": {
+        "component": "P1.patient",
+        "dom": "NOUNA",
+        "shell": 7,
+        "theta": 240.2,
+        "kappa": -1.7,
+        "wpe": "NOUNA:7@240.2|-1.7"
+      },
+      "target_interface": {
+        "component": "P2.photosynthesis",
+        "dom": "NOUNA",
+        "shell": 7,
+        "theta": 189.4,
+        "kappa": -1.72,
+        "wpe": "NOUNA:7@189.4|-1.72"
+      },
+      "interface_delta_theta": 50.8,
+      "interface_coupling_strength": 0.632,
+      "shell_influence": {
+        "formula": "I(λ_h,λ_l)=1/λ_l−1/λ_h",
+        "lambda_high": 7,
+        "lambda_low": 7,
+        "value": 0.0,
+        "note": "same shell — no gradient"
+      },
+      "semantic_label": "patient_couples_photosynthesis",
+      "key_bridges": [
+        "P1:patient -> P2:photosynthesis",
+        "P1:present -> P2:light",
+        "P1:severe -> P2:reaction",
+        "P1:chest_pain -> P2:photosynthetic"
+      ],
+      "wpe_notation": "$P1.patient coupling $P2.photosynthesis"
+    }
+  ],
   "shell_hierarchy": {
     "formula": "I(λ_h,λ_l) = 1/λ_l − 1/λ_h  where λ_h > λ_l",
     "semantics": "higher shells exert downward context influence on lower shells; information flows λ_high → λ_low",
