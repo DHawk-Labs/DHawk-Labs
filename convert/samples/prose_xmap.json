@@ -1,0 +1,648 @@
+{
+  "library": "ProseWorld.XMap",
+  "file": "ProseWorld_XMap.json",
+  "schema": "wpe-5.0-xmap-1.0",
+  "kind": "cross_coupling_map",
+  "wpe_version": "5.0",
+  "tme_version": "1.0",
+  "temporal_scale": "α=1.0",
+  "source_file_count": 4,
+  "unique_part_count": 4,
+  "coupling_pairs_total": 6,
+  "coupling_pairs_with_detail": 0,
+  "domain_count": 10,
+  "top_level_fields": {
+    "library": "string — library name",
+    "file": "string — canonical output filename",
+    "schema": "wpe-5.0-xmap-1.0",
+    "kind": "cross_coupling_map",
+    "parts": "object keyed by part ID (P1…PN); each entry is a part_shape",
+    "domains_table": "object mapping domain code -> {shell, type, description, parts}",
+    "coupling_tiers": "object defining 6 tier levels by cos(Δθ) range",
+    "cross_coupling_index": "array of detailed coupling records between specific interface components",
+    "coupling_matrix": "symmetric N×N matrix of {c, delta_theta, tier} for every part pair",
+    "shell_hierarchy": "object defining shell levels, influence formula, and key gradients",
+    "phase_resonance_bands": "6 phase bands (60° each) with resident parts and inter-part c",
+    "consistency_invariants": "list of invariants that must hold across all entries",
+    "lookup_paths": "navigation guide for common query patterns"
+  },
+  "part_key_format": "<PART_ID>",
+  "part_key_example": "P4",
+  "part_shape": {
+    "id": "string — canonical part identifier e.g. P1, P4",
+    "label": "string — human-readable title",
+    "filename": "string — source filename/URL",
+    "shell": "int — dominant WPE shell (min over the part's domain shells)",
+    "theta": "float — angular coordinate of the part's master output node [0,359]",
+    "kappa": "float — curvature of the master node (κ < 0 = stable well)",
+    "addr": "string — '<shell>@<theta>' unique address; used in ptr fields",
+    "dom": "string — primary domain code for this part",
+    "domain_codes": "list[string] — all domain codes the part resolves into",
+    "ptr_sequence": "list[addr] — parts this part FEEDS-INTO (directed)",
+    "ptr_coupling": "list[addr] — parts bidirectionally coupled (c ≥ 0.34)",
+    "ptr_orthogonal": "list[addr] — weakly related parts (-0.09 ≤ c < 0.34)",
+    "ptr_opposition": "list[addr] — parts in active tension (c < -0.09)",
+    "semantic_role": "string — plain-language role of this part",
+    "curation": {
+      "coupling_strength": "central | partial | weak",
+      "orthogonal_status": "filled | partial | empty",
+      "oppositional_status": "filled | empty | not_applicable",
+      "needs_curation": "bool",
+      "auto_sources": "list[string]",
+      "sufficiency_score": "float 0.0-1.0"
+    }
+  },
+  "address_format": {
+    "pattern": "<shell>@<theta>",
+    "example": "7@240.2",
+    "uniqueness": "every part has a unique addr; ptr fields reference parts by addr",
+    "lookup": "parts_by_addr[addr] -> part entry"
+  },
+  "reference_graph": {
+    "ptr_sequence": {
+      "operator": "*",
+      "direction": "outgoing, directed",
+      "semantics": "this part FEEDS-INTO / IS-PREREQUISITE-FOR the target part",
+      "cardinality": "0..N"
+    },
+    "ptr_coupling": {
+      "operator": "coupling",
+      "direction": "bidirectional",
+      "semantics": "this part IS-BIDIRECTIONALLY-COUPLED-WITH the target",
+      "cardinality": "0..N"
+    },
+    "ptr_orthogonal": {
+      "operator": "parallel (+) or none",
+      "direction": "outgoing reference",
+      "semantics": "this part IS-ON-A-DIFFERENT-AXIS-FROM but still relates to target",
+      "cardinality": "0..5"
+    },
+    "ptr_opposition": {
+      "operator": "coupling (tension)",
+      "direction": "bidirectional",
+      "semantics": "this part IS-IN-ACTIVE-TENSION-WITH the target; cos(Δθ) < -0.09",
+      "cardinality": "0..N (list)"
+    }
+  },
+  "coupling_tiers": {
+    "SYNERGISTIC": {
+      "c_range": "[0.87, 1.01)",
+      "delta_theta_range": "Δθ∈[0.0°, 29.5°]",
+      "interpretation": "cos≥0.87 | Δθ≤30° | near-identical phase alignment"
+    },
+    "REINFORCING": {
+      "c_range": "[0.61, 0.87)",
+      "delta_theta_range": "Δθ∈[29.6°, 52.4°]",
+      "interpretation": "cos 0.61-0.87 | Δθ 30-52° | strong positive coupling"
+    },
+    "MODERATE": {
+      "c_range": "[0.34, 0.61)",
+      "delta_theta_range": "Δθ∈[52.4°, 70.1°]",
+      "interpretation": "cos 0.34-0.61 | Δθ 52-70° | meaningful coupling with some offset"
+    },
+    "WEAK": {
+      "c_range": "[0.09, 0.34)",
+      "delta_theta_range": "Δθ∈[70.1°, 84.8°]",
+      "interpretation": "cos 0.09-0.34 | Δθ 70-85° | distant but present influence"
+    },
+    "ORTHOGONAL": {
+      "c_range": "[-0.09, 0.09)",
+      "delta_theta_range": "Δθ∈[84.8°, 95.2°]",
+      "interpretation": "cos ~0 | Δθ ~90° | independent axes, no direct coupling"
+    },
+    "OPPOSITION": {
+      "c_range": "[-1.01, -0.09)",
+      "delta_theta_range": "Δθ > 95.2°",
+      "interpretation": "cos < -0.09 | Δθ>95° | active tension or complementary opposition"
+    }
+  },
+  "domains_table": {
+    "ADJ": {
+      "shell": 13,
+      "type": "lexicon",
+      "description": "adjectives",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "ADV": {
+      "shell": 14,
+      "type": "lexicon",
+      "description": "adverbs",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "JARGON": {
+      "shell": 17,
+      "type": "lexicon",
+      "description": "domain jargon",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "META": {
+      "shell": 18,
+      "type": "lexicon",
+      "description": "meta / structural tokens",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "NOUNA": {
+      "shell": 9,
+      "type": "lexicon",
+      "description": "abstract nouns",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "NOUNC": {
+      "shell": 7,
+      "type": "lexicon",
+      "description": "concrete / count nouns",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "NOUNM": {
+      "shell": 8,
+      "type": "lexicon",
+      "description": "mass / substance nouns",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "NOUNP": {
+      "shell": 10,
+      "type": "lexicon",
+      "description": "proper nouns",
+      "parts": [
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "VERBA": {
+      "shell": 11,
+      "type": "lexicon",
+      "description": "action / dynamic verbs",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    },
+    "VERBS": {
+      "shell": 12,
+      "type": "lexicon",
+      "description": "stative / cognitive verbs",
+      "parts": [
+        "P1",
+        "P2",
+        "P3",
+        "P4"
+      ]
+    }
+  },
+  "parts": {
+    "P1": {
+      "id": "P1",
+      "addr": "7@240.2",
+      "label": "The patient presented with severe chest pain and shortness o",
+      "filename": "convert/samples/mixed_prose.txt",
+      "shell": 7,
+      "theta": 240.2,
+      "kappa": -1.7,
+      "dom": "NOUNA",
+      "domain_codes": [
+        "NOUNA",
+        "ADJ",
+        "VERBA",
+        "NOUNM",
+        "NOUNC",
+        "JARGON",
+        "VERBS",
+        "ADV",
+        "META"
+      ],
+      "wpe_built_ins_used": [],
+      "shell_range": {
+        "min": 7,
+        "max": 17
+      },
+      "section_count": 3,
+      "component_count_approx": 97,
+      "key_subsystems": [
+        "patient",
+        "present",
+        "severe",
+        "chest_pain",
+        "shortness_of_breath",
+        "electrocardiogram"
+      ],
+      "wpe_output": "NOUNA:7@240.2|-1.7:'the_patient_presented_with_severe_chest_pain_and_master'",
+      "ptr_sequence": [],
+      "ptr_coupling": [],
+      "ptr_orthogonal": [
+        "7@181.1",
+        "7@105.1",
+        "7@168.4"
+      ],
+      "ptr_opposition": [],
+      "semantic_role": "snippet_layer — 'The patient presented with severe chest pain and' dominated by domains [NOUNA, ADJ, VERBA]",
+      "curation": {
+        "coupling_strength": "weak",
+        "orthogonal_status": "filled",
+        "oppositional_status": "not_applicable",
+        "needs_curation": false,
+        "auto_sources": [
+          "wpe-5.0-xmap",
+          "lexicon-extraction"
+        ],
+        "sufficiency_score": 1.0
+      }
+    },
+    "P2": {
+      "id": "P2",
+      "addr": "7@181.1",
+      "label": "Photosynthesis - Wikipedia",
+      "filename": "/tmp/photosynthesis.html",
+      "shell": 7,
+      "theta": 181.1,
+      "kappa": -1.7,
+      "dom": "NOUNA",
+      "domain_codes": [
+        "NOUNA",
+        "ADJ",
+        "VERBA",
+        "NOUNC",
+        "NOUNM",
+        "NOUNP",
+        "VERBS",
+        "JARGON",
+        "ADV",
+        "META"
+      ],
+      "wpe_built_ins_used": [],
+      "shell_range": {
+        "min": 7,
+        "max": 13
+      },
+      "section_count": 1,
+      "component_count_approx": 8679,
+      "key_subsystems": [
+        "photosynthesis",
+        "light",
+        "doi",
+        "reaction",
+        "photosynthetic",
+        "plants"
+      ],
+      "wpe_output": "NOUNA:7@181.1|-1.7:'photosynthesis_wikipedia_master'",
+      "ptr_sequence": [],
+      "ptr_coupling": [],
+      "ptr_orthogonal": [
+        "7@240.2",
+        "7@105.1",
+        "7@168.4"
+      ],
+      "ptr_opposition": [],
+      "semantic_role": "snippet_layer — 'Photosynthesis - Wikipedia' dominated by domains [NOUNA, ADJ, VERBA]",
+      "curation": {
+        "coupling_strength": "weak",
+        "orthogonal_status": "filled",
+        "oppositional_status": "not_applicable",
+        "needs_curation": true,
+        "auto_sources": [
+          "wpe-5.0-xmap",
+          "lexicon-extraction"
+        ],
+        "sufficiency_score": 0.88
+      }
+    },
+    "P3": {
+      "id": "P3",
+      "addr": "7@105.1",
+      "label": "Myocardial infarction - Wikipedia",
+      "filename": "/tmp/mi.html",
+      "shell": 7,
+      "theta": 105.1,
+      "kappa": -1.75,
+      "dom": "NOUNA",
+      "domain_codes": [
+        "NOUNA",
+        "ADJ",
+        "VERBA",
+        "NOUNP",
+        "JARGON",
+        "NOUNC",
+        "ADV",
+        "VERBS",
+        "NOUNM",
+        "META"
+      ],
+      "wpe_built_ins_used": [],
+      "shell_range": {
+        "min": 7,
+        "max": 17
+      },
+      "section_count": 1,
+      "component_count_approx": 9406,
+      "key_subsystems": [
+        "myocardial_infarction",
+        "doi",
+        "heart",
+        "risk",
+        "et_al",
+        "mi"
+      ],
+      "wpe_output": "NOUNA:7@105.1|-1.75:'myocardial_infarction_wikipedia_master'",
+      "ptr_sequence": [],
+      "ptr_coupling": [],
+      "ptr_orthogonal": [
+        "7@181.1",
+        "7@240.2",
+        "7@168.4"
+      ],
+      "ptr_opposition": [],
+      "semantic_role": "snippet_layer — 'Myocardial infarction - Wikipedia' dominated by domains [NOUNA, ADJ, VERBA]",
+      "curation": {
+        "coupling_strength": "weak",
+        "orthogonal_status": "filled",
+        "oppositional_status": "not_applicable",
+        "needs_curation": true,
+        "auto_sources": [
+          "wpe-5.0-xmap",
+          "lexicon-extraction"
+        ],
+        "sufficiency_score": 0.88
+      }
+    },
+    "P4": {
+      "id": "P4",
+      "addr": "7@168.4",
+      "label": "Provided proper attribution is provided, Google hereby grant",
+      "filename": "/tmp/attention.pdf",
+      "shell": 7,
+      "theta": 168.4,
+      "kappa": -1.8,
+      "dom": "VERBA",
+      "domain_codes": [
+        "VERBA",
+        "NOUNA",
+        "ADJ",
+        "VERBS",
+        "NOUNC",
+        "NOUNP",
+        "ADV",
+        "JARGON",
+        "META",
+        "NOUNM"
+      ],
+      "wpe_built_ins_used": [],
+      "shell_range": {
+        "min": 9,
+        "max": 12
+      },
+      "section_count": 15,
+      "component_count_approx": 4907,
+      "key_subsystems": [
+        "attention",
+        "model",
+        "layer",
+        "sequence",
+        "position",
+        "input"
+      ],
+      "wpe_output": "VERBA:7@168.4|-1.8:'provided_proper_attribution_is_provided_google_h_master'",
+      "ptr_sequence": [],
+      "ptr_coupling": [],
+      "ptr_orthogonal": [
+        "7@181.1",
+        "7@105.1",
+        "7@240.2"
+      ],
+      "ptr_opposition": [],
+      "semantic_role": "snippet_layer — 'Provided proper attribution is provided, Google ' dominated by domains [VERBA, NOUNA, ADJ]",
+      "curation": {
+        "coupling_strength": "weak",
+        "orthogonal_status": "filled",
+        "oppositional_status": "not_applicable",
+        "needs_curation": true,
+        "auto_sources": [
+          "wpe-5.0-xmap",
+          "lexicon-extraction"
+        ],
+        "sufficiency_score": 0.89
+      }
+    }
+  },
+  "coupling_matrix": {
+    "parts_order": [
+      "P1",
+      "P2",
+      "P3",
+      "P4"
+    ],
+    "cell_schema": {
+      "c": "float cos(Δθ) coupling strength",
+      "delta_theta": "float effective phase separation in degrees",
+      "tier": "string coupling tier label"
+    },
+    "values": {
+      "P1": {
+        "P1": {
+          "c": 1.0,
+          "delta_theta": 0.0,
+          "tier": "SELF"
+        },
+        "P2": {
+          "c": 0.245,
+          "delta_theta": 75.8,
+          "tier": "WEAK"
+        },
+        "P3": {
+          "c": 0.1966,
+          "delta_theta": 78.7,
+          "tier": "WEAK"
+        },
+        "P4": {
+          "c": 0.0904,
+          "delta_theta": 84.8,
+          "tier": "WEAK"
+        }
+      },
+      "P2": {
+        "P1": {
+          "c": 0.245,
+          "delta_theta": 75.8,
+          "tier": "WEAK"
+        },
+        "P2": {
+          "c": 1.0,
+          "delta_theta": 0.0,
+          "tier": "SELF"
+        },
+        "P3": {
+          "c": 0.2237,
+          "delta_theta": 77.1,
+          "tier": "WEAK"
+        },
+        "P4": {
+          "c": 0.1469,
+          "delta_theta": 81.6,
+          "tier": "WEAK"
+        }
+      },
+      "P3": {
+        "P1": {
+          "c": 0.1966,
+          "delta_theta": 78.7,
+          "tier": "WEAK"
+        },
+        "P2": {
+          "c": 0.2237,
+          "delta_theta": 77.1,
+          "tier": "WEAK"
+        },
+        "P3": {
+          "c": 1.0,
+          "delta_theta": 0.0,
+          "tier": "SELF"
+        },
+        "P4": {
+          "c": 0.1185,
+          "delta_theta": 83.2,
+          "tier": "WEAK"
+        }
+      },
+      "P4": {
+        "P1": {
+          "c": 0.0904,
+          "delta_theta": 84.8,
+          "tier": "WEAK"
+        },
+        "P2": {
+          "c": 0.1469,
+          "delta_theta": 81.6,
+          "tier": "WEAK"
+        },
+        "P3": {
+          "c": 0.1185,
+          "delta_theta": 83.2,
+          "tier": "WEAK"
+        },
+        "P4": {
+          "c": 1.0,
+          "delta_theta": 0.0,
+          "tier": "SELF"
+        }
+      }
+    }
+  },
+  "cross_coupling_index": [],
+  "shell_hierarchy": {
+    "formula": "I(λ_h,λ_l) = 1/λ_l − 1/λ_h  where λ_h > λ_l",
+    "semantics": "higher shells exert downward context influence on lower shells; information flows λ_high → λ_low",
+    "levels": {
+      "7": {
+        "label": "CrossSystem",
+        "description": "parts whose master node sits on shell 7",
+        "parts_dominant": [
+          "P1.NOUNA",
+          "P2.NOUNA",
+          "P3.NOUNA",
+          "P4.VERBA"
+        ]
+      }
+    },
+    "key_influence_gradients": []
+  },
+  "phase_resonance_bands": {
+    "description": "Parts whose dominant θ falls in the same 60° arc share phase resonance and exhibit strongest natural coupling",
+    "bands": {
+      "α_band_[0,60)": {
+        "representative_theta": 30,
+        "parts": []
+      },
+      "β_band_[60,120)": {
+        "representative_theta": 90,
+        "parts": [
+          "P3"
+        ]
+      },
+      "γ_band_[120,180)": {
+        "representative_theta": 150,
+        "parts": [
+          "P4"
+        ]
+      },
+      "δ_band_[180,240)": {
+        "representative_theta": 210,
+        "parts": [
+          "P2"
+        ]
+      },
+      "ε_band_[240,300)": {
+        "representative_theta": 270,
+        "parts": [
+          "P1"
+        ]
+      },
+      "ζ_band_[300,360)": {
+        "representative_theta": 330,
+        "parts": []
+      }
+    }
+  },
+  "consistency_invariants": [
+    "part.addr == '<part.shell>@<part.theta>'",
+    "part.shell == min(domains_table[d].shell for d in part.domain_codes)",
+    "every addr in ptr_sequence / ptr_coupling / ptr_orthogonal / ptr_opposition must resolve to an existing part.addr",
+    "ptr_opposition is a list of strings (may be empty); entries are addrs of parts with cos(Δθ) < -0.09",
+    "ptr_orthogonal has entries with -0.09 ≤ cos(Δθ) < 0.34 (WEAK or ORTHOGONAL tier)",
+    "coupling_matrix[Pi][Pj].c == coupling_matrix[Pj][Pi].c  (symmetric)",
+    "coupling_matrix[Pi][Pi].c == 1.0 for all Pi (self-coupling = 1)",
+    "coupling_matrix[Pi][Pj].tier == tier_from_c(coupling_matrix[Pi][Pj].c)",
+    "every cross_coupling_index entry's source_part and target_part must be in parts",
+    "interface_coupling_strength = cos(interface_delta_theta)",
+    "shell_influence.value = 1/lambda_low − 1/lambda_high when lambda_high > lambda_low; else 0",
+    "curation.orthogonal_status='filled' implies len(ptr_orthogonal) >= 3",
+    "curation.orthogonal_status='partial' implies 1 <= len(ptr_orthogonal) <= 2",
+    "sufficiency_score ∈ [0.0, 1.0]; score < 0.90 implies needs_curation = true",
+    "operator ∈ {'sequence','parallel','coupling'}; 'coupling' implies bidirectional; 'sequence' implies directed"
+  ],
+  "lookup_paths": {
+    "part_by_id": "doc.parts[<PART_ID>]  e.g. doc.parts['P4']",
+    "part_by_addr": "next(p for p in doc.parts.values() if p['addr']==addr)",
+    "coupling": "doc.coupling_matrix['Pi']['Pj']  — always symmetric",
+    "xc_detail": "doc.cross_coupling_index[i] filtered by source_part/target_part",
+    "strongest_couplings": "sorted(doc.coupling_matrix[pi].items(), key=lambda x: x[1]['c'], reverse=True)",
+    "parts_in_tier": "[(pi,pj) for pi in parts for pj in parts if coupling_matrix[pi][pj]['tier']==<TIER>]",
+    "domain_to_part": "doc.domains_table[<DOM>]['parts']",
+    "shell_peers": "[p for p in doc.parts.values() if p['shell']==<SHELL>]"
+  }
+}
